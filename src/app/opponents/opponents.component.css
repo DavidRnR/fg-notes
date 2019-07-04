@@ -13,13 +13,16 @@ mat-card {
   margin: 1.5em 0;
 }
 
-mat-card .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+mat-card .header-image {
   background-size: cover;
 }
 
 mat-card .card-header-text {
   flex: 1;
+}
+
+mat-card .card-header-text strong {
+  margin-right: 0.5em;
 }
 
 mat-card-actions {

@@ -33,17 +33,17 @@ export class IndexedDBService {
             };
 
             // Create an objectStore for this database
-            this.objectStore = this.db.createObjectStore('opponent', { keyPath: 'cfn', autoIncrement: true });
+            this.db.createObjectStore('opponent', { keyPath: 'id', autoIncrement: true });
 
         };
         return subject.asObservable();
     }
 
-    addItem(item, type): Observable<any> {
+    addItem(item): Observable<any> {
 
         const subject = new Subject();
         // open a read/write db transaction, ready for adding the data
-        const transaction = this.db.transaction([type], 'readwrite');
+        const transaction = this.db.transaction(['opponent'], 'readwrite');
 
         // report on the success of the transaction completing, when everything is done
         transaction.oncomplete = (event) => {
@@ -56,8 +56,34 @@ export class IndexedDBService {
             subject.next(error);
         };
 
-        const objectStore = transaction.objectStore(type);
+        const objectStore = transaction.objectStore('opponent');
         const objectStoreRequest = objectStore.add(item);
+        objectStoreRequest.onsuccess = (event) => {
+            console.log('completed obj');
+            subject.next(event);
+        };
+        return subject.asObservable();
+    }
+
+    putItem(item): Observable<any> {
+
+        const subject = new Subject();
+        // open a read/write db transaction, ready for adding the data
+        const transaction = this.db.transaction(['opponent'], 'readwrite');
+
+        // report on the success of the transaction completing, when everything is done
+        transaction.oncomplete = (event) => {
+            console.log('completed');
+
+        };
+
+        transaction.onerror = (error) => {
+            console.error(error);
+            subject.next(error);
+        };
+
+        const objectStore = transaction.objectStore('opponent');
+        const objectStoreRequest = objectStore.put(item);
         objectStoreRequest.onsuccess = (event) => {
             console.log('completed obj');
             subject.next(event);

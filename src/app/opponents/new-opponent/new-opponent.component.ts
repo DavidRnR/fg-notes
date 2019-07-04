@@ -16,9 +16,14 @@ export class NewOpponentComponent implements OnInit {
   spinner = false;
 
   characters: Character[] = [];
+  opponentId: number;
 
   constructor(public dialogRef: MatDialogRef<NewOpponentComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-    private formBuilder: FormBuilder, public opponentsService: OpponentsService ) { }
+    private formBuilder: FormBuilder, public opponentsService: OpponentsService ) {
+       if (data.opponentId !== undefined) {
+         this.opponentId = data.opponentId;
+       }
+     }
 
   ngOnInit() {
     this.createForm();
@@ -37,22 +42,14 @@ export class NewOpponentComponent implements OnInit {
       this.spinner = true;
 
       const opponent: Opponent = {
+        id: this.opponentId,
         cfn: this.opponentForm.get('cfn').value,
         name: this.opponentForm.get('name').value,
         character: this.opponentForm.get('character').value,
         notes: [this.opponentForm.get('note').value]
       };
 
-      this.opponentsService.addOpponent(opponent).subscribe((opponent: Opponent) => {
-        // this.openSnackBar(message, 'success');
-        this.dialogRef.close('add-edit');
-        // Hide Loading
-        this.spinner = false;
-      }, (error) => {
-        // this.openSnackBar(error, 'error');
-        // Hide Loading
-        this.spinner = false;
-      });
+      this.dialogRef.close(opponent);
     }
   }
 

@@ -1,22 +1,22 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
+<form>
+  <mat-form-field class="full-width">
     <input type="text" placeholder="Search Opponent" aria-label="Number" matInput [formControl]="myControl"
       [matAutocomplete]="auto">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{option}}
+      <mat-option *ngFor="let option of filteredOpponents | async" [value]="option.cfn">
+        {{option.cfn}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
 </form>
 
 <div class="cards-container">
-  <mat-card class="example-card" *ngFor="let opponent of opponents">
+  <mat-card class="example-card" *ngFor="let opponent of filteredOpponents | async">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
+      <div mat-card-avatar class="header-image" [style.backgroundImage]="'url('+ opponent.character.image +')'"></div>
       <div class="card-header-text">
-            <mat-card-title>{{opponent.name}}</mat-card-title>
-            <mat-card-subtitle>{{opponent.cfn}}</mat-card-subtitle>
+        <mat-card-title>{{opponent.name}}</mat-card-title>
+        <mat-card-subtitle><strong>CFN:</strong>{{opponent.cfn}}</mat-card-subtitle>
       </div>
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Opponent Menu">
         <mat-icon>more_vert</mat-icon>
@@ -33,15 +33,11 @@
       </mat-menu>
     </mat-card-header>
     <mat-card-content>
-      <mat-list-item>
-        <p>{{ opponent.notes }}</p>
-        <!-- <div> 
-          <p>{{ opponent.notes }}</p>
-          <button mat-icon-button>
-            <mat-icon>info</mat-icon>
-          </button>
-        </div> -->
-      </mat-list-item>
+      <mat-list>
+        <mat-list-item *ngFor="let note of opponent.notes">
+          {{note}}
+        </mat-list-item>
+      </mat-list>
     </mat-card-content>
     <mat-card-actions>
       <button mat-mini-fab color="accent" (click)="onAddNote(opponent)">

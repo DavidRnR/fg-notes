@@ -15,54 +15,82 @@ import { NoteComponent } from './note/note.component';
 export class OpponentsComponent implements OnInit {
 
   myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<string[]>;
+  filteredOpponents: Observable<any[]>;
 
   displayedColumns: string[] = ['cfn', 'name', 'character', 'notes', 'add_note', 'delete'];
   opponents: Opponent[] = [];
+  opponentSelected: Opponent;
 
   constructor(public dialog: MatDialog, private opponentsService: OpponentsService) {
 
   }
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filteredOpponents = this.myControl.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value))
+      map(value => {
+        return this._filter(value)
+      })
     );
 
-    this.opponentsService.getOpponents().subscribe( opponents => {
-      this.opponents = opponents;
-    });
+    this.getOpponents(true);
   }
 
-  onAddOpponent () {
+  onAddOpponent() {
     const dialogRef = this.dialog.open(NewOpponentComponent, {
-      width: '250px', panelClass: 'dialog-full-screen-mobile'
+      width: '250px', panelClass: 'dialog-full-screen-mobile',
+      data: { opponentId: this.opponents.length }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    dialogRef.afterClosed().subscribe((opponent: Opponent) => {
+      this.opponentSelected = opponent;
+      this.saveOpponent();
     });
   }
 
   onAddNote(opponent: Opponent) {
-    // this.opponentsService.addNote(o).subscribe( opponents => {
-    //   this.opponents = opponents;
-    // });
-
+    this.opponentSelected = opponent;
+    
     const dialogRef = this.dialog.open(NoteComponent, {
       width: '250px', panelClass: 'dialog-full-screen-mobile'
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    dialogRef.afterClosed().subscribe(note => {
+      this.opponentSelected.notes.push(note);
+      this.updateOpponent();
     });
   }
 
   //******************************************************* */
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+  private getOpponents (resetControl = false) {
+    this.opponentsService.getOpponents().subscribe(opponents => {
+      this.opponents = opponents;
+      if (resetControl) {
+        this.myControl.reset();
+      }
+    });
+  }
 
-    return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
+  private saveOpponent() {
+    this.opponentsService.addOpponent(this.opponentSelected).subscribe((opponent: Opponent) => {
+     this.getOpponents();
+    }, (error) => {
+      // this.openSnackBar(error, 'error');
+      // Hide Loading
+    });
+  }
+
+  private updateOpponent() {
+    this.opponentsService.updateOpponent(this.opponentSelected).subscribe((opponent: Opponent) => {
+     this.getOpponents();
+    }, (error) => {
+      // this.openSnackBar(error, 'error');
+      // Hide Loading
+    });
+  }
+
+  private _filter(value: string): any {
+    const filterValue = (value) ? value.toLowerCase() : '';
+
+    return this.opponents.filter(op => op.cfn.toLowerCase().indexOf(filterValue) === 0);
   }
 }

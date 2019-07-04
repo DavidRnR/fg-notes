@@ -19,7 +19,7 @@
 
   <mat-form-field class="full-width">
     <mat-select placeholder="Character" formControlName="character">
-      <mat-option *ngFor="let character of characters" [value]="character.id">
+      <mat-option *ngFor="let character of characters" [value]="character">
         <div class="character-option">
           <img src="{{character.image}}" alt="Character {{character.name}}"> 
           <span>{{character.name}}</span>
