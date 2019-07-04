@@ -1,0 +1,17 @@
+<div class="close-dialog-container">
+  <button mat-icon-button [mat-dialog-close]="false">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<form class="full-width" [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+
+  <mat-form-field class="full-width">
+    <textarea matInput placeholder="Note" rows="3" formControlName="note"></textarea>
+    <mat-error *ngIf="opponentForm.get('note').invalid">Please write a note about this opponent</mat-error>
+  </mat-form-field>
+
+  <section class="form-actions">
+    <button type="submit" mat-raised-button color="primary">ADD NOTE</button>
+  </section>
+</form>

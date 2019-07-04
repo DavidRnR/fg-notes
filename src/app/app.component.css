@@ -1,0 +1,15 @@
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidenav {
+  width: 30vw;
+  background-color: var(--fg-notes-accent);
+}
+
+.sidenav-container {
+  height: 100%;
+  padding: 0.5em;
+}

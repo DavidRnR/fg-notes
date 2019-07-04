@@ -1,0 +1,14 @@
+.character-option {
+  display: flex;
+}
+
+.character-option img {
+  width: 40px;
+  border-radius: 20px;
+  margin: 5px 0;
+}
+
+
+.character-option span {
+  margin-left: 1em;
+}

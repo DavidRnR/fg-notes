@@ -1,0 +1,40 @@
+<div class="close-dialog-container">
+  <button mat-icon-button [mat-dialog-close]="false">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+
+<form class="full-width" [formGroup]="opponentForm" (ngSubmit)="onSubmit()">
+
+  <mat-form-field class="full-width">
+    <input matInput placeholder="CFN" formControlName="cfn">
+    <mat-error *ngIf="opponentForm.get('cfn').invalid">CFN is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Name" formControlName="name">
+    <mat-error *ngIf="opponentForm.get('name').invalid">Name is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-select placeholder="Character" formControlName="character">
+      <mat-option *ngFor="let character of characters" [value]="character.id">
+        <div class="character-option">
+          <img src="{{character.image}}" alt="Character {{character.name}}"> 
+          <span>{{character.name}}</span>
+        </div>
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="opponentForm.get('character').invalid">Please select a character</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <textarea matInput placeholder="Note" rows="3" formControlName="note"></textarea>
+    <mat-error *ngIf="opponentForm.get('note').invalid">Please write a note about this opponent</mat-error>
+  </mat-form-field>
+
+  <section class="form-actions">
+    <button type="submit" mat-raised-button color="primary">ADD OPPONENT</button>
+  </section>
+</form>

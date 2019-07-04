@@ -1,0 +1,177 @@
+[
+    {
+        "id": 1,
+        "name": "Ryu",
+        "image": "assets/characters/ryu.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Chun-Li",
+        "image": "assets/characters/chunli.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Nash",
+        "image": "assets/characters/nash.jpg"
+    },
+    {
+        "id": 4,
+        "name": "M. Bison",
+        "image": "assets/characters/mbison.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Cammy",
+        "image": "assets/characters/cammy.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Birdie",
+        "image": "assets/characters/birdie.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Ken",
+        "image": "assets/characters/ken.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Necalli",
+        "image": "assets/characters/necalli.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Vega",
+        "image": "assets/characters/vega.jpg"
+    },
+    {
+        "id": 10,
+        "name": "R. Mika",
+        "image": "assets/characters/rmika.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Rashid",
+        "image": "assets/characters/rashid.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Karin",
+        "image": "assets/characters/karin.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Zangief",
+        "image": "assets/characters/zangief.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Laura",
+        "image": "assets/characters/laura.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Dhalsim",
+        "image": "assets/characters/dhalsim.jpg"
+    },
+    {
+        "id": 16,
+        "name": "F.A.N.G",
+        "image": "assets/characters/fang.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Alex",
+        "image": "assets/characters/alex.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Guile",
+        "image": "assets/characters/guile.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Ibuki",
+        "image": "assets/characters/ibuki.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Balrog",
+        "image": "assets/characters/balrog.jpg"
+    },
+    {
+        "id": 21,
+        "name": "Juri",
+        "image": "assets/characters/juri.jpg"
+    },
+    {
+        "id": 22,
+        "name": "Urien",
+        "image": "assets/characters/urien.jpg"
+    },
+    {
+        "id": 23,
+        "name": "Akuma",
+        "image": "assets/characters/akuma.jpg"
+    },
+    {
+        "id": 24,
+        "name": "Kolin",
+        "image": "assets/characters/kolin.jpg"
+    },
+    {
+        "id": 25,
+        "name": "Ed",
+        "image": "assets/characters/ed.jpg"
+    },
+    {
+        "id": 26,
+        "name": "Abigail",
+        "image": "assets/characters/abigail.jpg"
+    },
+    {
+        "id": 27,
+        "name": "Menat",
+        "image": "assets/characters/menat.jpg"
+    },
+    {
+        "id": 28,
+        "name": "Zeku",
+        "image": "assets/characters/zeku.jpg"
+    },
+    {
+        "id": 29,
+        "name": "Sakura",
+        "image": "assets/characters/sakura.jpg"
+    },
+    {
+        "id": 30,
+        "name": "Blanka",
+        "image": "assets/characters/blanka.jpg"
+    },
+    {
+        "id": 31,
+        "name": "Falke",
+        "image": "assets/characters/falke.jpg"
+    },
+    {
+        "id": 32,
+        "name": "Cody",
+        "image": "assets/characters/cody.jpg"
+    },
+    {
+        "id": 33,
+        "name": "G",
+        "image": "assets/characters/g.jpg"
+    },
+    {
+        "id": 34,
+        "name": "Sagat",
+        "image": "assets/characters/sagat.jpg"
+    },
+    {
+        "id": 35,
+        "name": "Kage",
+        "image": "assets/characters/kage.jpg"
+    }
+]

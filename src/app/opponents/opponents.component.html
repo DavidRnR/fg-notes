@@ -1,0 +1,58 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Search Opponent" aria-label="Number" matInput [formControl]="myControl"
+      [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<div class="cards-container">
+  <mat-card class="example-card" *ngFor="let opponent of opponents">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <div class="card-header-text">
+            <mat-card-title>{{opponent.name}}</mat-card-title>
+            <mat-card-subtitle>{{opponent.cfn}}</mat-card-subtitle>
+      </div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Opponent Menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon color="accent">edit</mat-icon>
+          <span>Edit</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon color="warn">delete</mat-icon>
+          <span>Delete</span>
+        </button>
+      </mat-menu>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list-item>
+        <p>{{ opponent.notes }}</p>
+        <!-- <div> 
+          <p>{{ opponent.notes }}</p>
+          <button mat-icon-button>
+            <mat-icon>info</mat-icon>
+          </button>
+        </div> -->
+      </mat-list-item>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-mini-fab color="accent" (click)="onAddNote(opponent)">
+        <mat-icon>note_add</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="add-opponent-container">
+  <button mat-fab color="primary" aria-label="Add Opponent" (click)="onAddOpponent()">
+    <mat-icon>person_add</mat-icon>
+  </button>
+</div>

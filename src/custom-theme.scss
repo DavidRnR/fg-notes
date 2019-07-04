@@ -1,0 +1,81 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$primary: (
+  50: #FE1506,
+  100: #FE1506,
+  200: #FE1506,
+  300: #FE1506,
+  400: #FE1506,
+  500: #FE1506,
+  600: #FE1506,
+  700: #FE1506,
+  800: #FE1506,
+  900: #FE1506,
+  A100: #FE1506,
+  A200: #FE1506,
+  A400: #FE1506,
+  A700: #FE1506,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$accent: (
+  50: #FF9906,
+  100: #FF9906,
+  200: #FF9906,
+  300: #FF9906,
+  400: #FF9906,
+  500: #FF9906,
+  600: #FF9906,
+  700: #FF9906,
+  800: #FF9906,
+  900: #FF9906,
+  A100: #FF9906,
+  A200: #FF9906,
+  A400: #FF9906,
+  A700: #FF9906,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$fg-notes-primary: mat-palette($primary);
+$fg-notes-accent: mat-palette($accent);
+$fg-notes-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$fg-notes-theme: mat-light-theme($fg-notes-primary, $fg-notes-accent, $fg-notes-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($fg-notes-theme);

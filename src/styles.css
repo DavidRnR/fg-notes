@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root {
+  --fg-notes-primary: #FE1506;
+  --fg-notes-accent: #FF9906;
+  --fg-notes-href: #003DA5;
+  --fg-notes-background: #ECECEC;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.close-dialog-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  /* Full Screen Dialogs/Modals */
+  .dialog-full-screen-mobile {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+}
