@@ -4,6 +4,7 @@
 
 .character-option img {
   width: 40px;
+  height: 40px;
   border-radius: 20px;
   margin: 5px 0;
 }
@@ -11,4 +12,14 @@
 
 .character-option span {
   margin-left: 1em;
+}
+
+.select-character-container {
+  display: flex;
+  align-items: center;
+}
+
+.select-character-container mat-form-field {
+  flex: 1;
+  margin-right: 0.3em;
 }

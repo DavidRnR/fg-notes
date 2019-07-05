@@ -1,12 +1,18 @@
-.table-container,
-table {
-  width: 100%;
-}
-
 .add-opponent-container {
   position: fixed;
   bottom: 1em;
   right: 1em;
+}
+
+.search-opponent-form {
+  position: fixed;
+  width: 100%;
+  z-index: 500;
+  background-color: #fafafa;
+}
+
+.cards-container {
+  margin: 5em 0;
 }
 
 mat-card {
@@ -27,9 +33,10 @@ mat-card .card-header-text strong {
 
 mat-card-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 mat-card-actions button {
-  margin: 0 0.6em;
+  margin: 0  0.6em 0.6em 0.6em;
+  font-size: 0.7rem;
 }

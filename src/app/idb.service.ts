@@ -7,7 +7,6 @@ import { Subject, Observable } from 'rxjs';
 export class IndexedDBService {
     dbPromise: IDBOpenDBRequest;
     db;
-    objectStore;
 
     constructor() { }
 
@@ -48,7 +47,7 @@ export class IndexedDBService {
         // report on the success of the transaction completing, when everything is done
         transaction.oncomplete = (event) => {
             console.log('completed');
-
+            subject.complete();
         };
 
         transaction.onerror = (error) => {
@@ -74,7 +73,7 @@ export class IndexedDBService {
         // report on the success of the transaction completing, when everything is done
         transaction.oncomplete = (event) => {
             console.log('completed');
-
+            subject.complete();
         };
 
         transaction.onerror = (error) => {
@@ -95,17 +94,41 @@ export class IndexedDBService {
         const subject = new Subject();
 
         const transaction = this.db.transaction(['opponent'], 'readonly');
-
+        transaction.oncomplete = (event) => {
+            subject.complete();
+        };
         const objectStore = transaction.objectStore('opponent');
 
         objectStore.getAll().onsuccess = (event) => {
             subject.next(event.target.result);
-            subject.complete();
         };
 
         objectStore.getAll().onerror = (event) => {
             console.error(event);
             subject.error(event)
+        };
+        return subject.asObservable();
+    }
+
+    deleteItem(itemKey): Observable<any> {
+        const subject = new Subject();
+        // open a read/write db transaction, ready for adding the data
+        const transaction = this.db.transaction(['opponent'], 'readwrite');
+
+        // report on the success of the transaction completing, when everything is done
+        transaction.oncomplete = (event) => {
+            subject.complete();
+        };
+
+        transaction.onerror = (error) => {
+            console.error(error);
+            subject.next(error);
+        };
+
+        const objectStore = transaction.objectStore('opponent');
+        const objectStoreRequest = objectStore.delete(itemKey);
+        objectStoreRequest.onsuccess = (event) => {
+            subject.next(event);
         };
         return subject.asObservable();
     }

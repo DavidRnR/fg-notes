@@ -1,4 +1,4 @@
-<form>
+<form class="search-opponent-form">
   <mat-form-field class="full-width">
     <input type="text" placeholder="Search Opponent" aria-label="Number" matInput [formControl]="myControl"
       [matAutocomplete]="auto">
@@ -11,7 +11,7 @@
 </form>
 
 <div class="cards-container">
-  <mat-card class="example-card" *ngFor="let opponent of filteredOpponents | async">
+  <mat-card *ngFor="let opponent of filteredOpponents | async">
     <mat-card-header>
       <div mat-card-avatar class="header-image" [style.backgroundImage]="'url('+ opponent.character.image +')'"></div>
       <div class="card-header-text">
@@ -22,11 +22,11 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item (click)="onEditOpponent(opponent)">
           <mat-icon color="accent">edit</mat-icon>
           <span>Edit</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="onDeleteOpponent(opponent)">
           <mat-icon color="warn">delete</mat-icon>
           <span>Delete</span>
         </button>
@@ -34,14 +34,16 @@
     </mat-card-header>
     <mat-card-content>
       <mat-list>
-        <mat-list-item *ngFor="let note of opponent.notes">
-          {{note}}
+        <mat-list-item *ngFor="let note of opponent.notes; index as i">
+          {{note}} <button mat-icon-button color="primary" aria-label="Delete Note" (click)="onDeleteNote(opponent, i)">
+            <mat-icon>clear</mat-icon>
+          </button>
         </mat-list-item>
       </mat-list>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-mini-fab color="accent" (click)="onAddNote(opponent)">
-        <mat-icon>note_add</mat-icon>
+      <button mat-stroked-button (click)="onAddNote(opponent)">
+        ADD NOTE
       </button>
     </mat-card-actions>
   </mat-card>
