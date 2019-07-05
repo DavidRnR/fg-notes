@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 import { MatDialog } from '@angular/material';
-import { NewOpponentComponent } from './new-opponent/new-opponent.component';
+import { OpponentComponent } from './opponent/opponent.component';
 import { NoteComponent } from './note/note.component';
 
 @Component({
@@ -34,8 +34,8 @@ export class OpponentsComponent implements OnInit {
   }
 
   onAddOpponent() {
-    const dialogRef = this.dialog.open(NewOpponentComponent, {
-      width: '250px', panelClass: 'dialog-full-screen-mobile',
+    const dialogRef = this.dialog.open(OpponentComponent, {
+      width: '450px', panelClass: 'dialog-full-screen-mobile',
       data: { opponentId: this.opponents.length }
     });
 
@@ -51,7 +51,7 @@ export class OpponentsComponent implements OnInit {
     this.opponentSelected = opponent;
 
     const dialogRef = this.dialog.open(NoteComponent, {
-      width: '250px'
+      width: '450px'
     });
 
     dialogRef.afterClosed().subscribe((note: string) => {
@@ -64,8 +64,8 @@ export class OpponentsComponent implements OnInit {
 
   onEditOpponent(opponent: Opponent) {
 
-    const dialogRef = this.dialog.open(NewOpponentComponent, {
-      width: '250px', panelClass: 'dialog-full-screen-mobile',
+    const dialogRef = this.dialog.open(OpponentComponent, {
+      width: '450px', panelClass: 'dialog-full-screen-mobile',
       data: { opponent: opponent }
     });
 

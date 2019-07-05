@@ -35,7 +35,8 @@
     <mat-card-content>
       <mat-list>
         <mat-list-item *ngFor="let note of opponent.notes; index as i">
-          {{note}} <button mat-icon-button color="primary" aria-label="Delete Note" (click)="onDeleteNote(opponent, i)">
+          {{note}} 
+          <button mat-icon-button color="warn" aria-label="Delete Note" (click)="onDeleteNote(opponent, i)">
             <mat-icon>clear</mat-icon>
           </button>
         </mat-list-item>

@@ -4,12 +4,63 @@ main {
   height: 100%;
 }
 
+mat-toolbar {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.5942752100840336) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+mat-toolbar button {
+  color: white;
+}
+
 .sidenav {
-  width: 30vw;
-  background-color: var(--fg-notes-accent);
+  width: 40vw;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5942752100840336) 0%, rgba(255, 151, 0, 1) 100%);
+  border: 1px solid black;
+}
+
+.sidenav-content-container {
+  font-size: 2rem;
+  color: white;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.sidenav-content-container section {
+  padding: 2em;
+}
+
+.logo-container {
+  background-image: url("../assets/fg-notes-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 50%;
+}
+
+.footer {
+  font-size: 1.5rem;
 }
 
 .sidenav-container {
   height: 100%;
+}
+
+.sidenav-container mat-sidenav-content {
   padding: 0.5em;
+}
+
+
+@media (max-width: 1023px) {
+  .sidenav {
+    width: 70vw;
+  }
+
+  .footer {
+    font-size: 1.2rem;
+  }
+
 }

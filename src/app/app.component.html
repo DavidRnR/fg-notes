@@ -5,9 +5,29 @@
     </button>
   </mat-toolbar>
   <mat-sidenav-container class="sidenav-container">
-      <mat-sidenav #drawer class="sidenav">Start</mat-sidenav>
-      <mat-sidenav-content>
-          <router-outlet></router-outlet>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
+    <mat-sidenav #drawer class="sidenav">
+      <div class="sidenav-content-container">
+        <section>
+          Take notes about your Street Fighter V opponents
+        </section>
+        <div class="logo-container">
+           <!-- Image background -->
+        </div>
+        <section class="footer">
+          <div>
+              Created by David Martín
+              <i class="fab fa-twitter fa-fw"></i>
+              <i class="far fa-envelope fa-fw"></i>
+          </div>
+          <div>
+              Donate
+              <i class="fab fa-paypal"></i>
+          </div>
+        </section>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </main>

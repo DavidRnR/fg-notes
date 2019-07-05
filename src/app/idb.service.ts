@@ -41,12 +41,10 @@ export class IndexedDBService {
     addItem(item): Observable<any> {
 
         const subject = new Subject();
-        // open a read/write db transaction, ready for adding the data
+
         const transaction = this.db.transaction(['opponent'], 'readwrite');
 
-        // report on the success of the transaction completing, when everything is done
         transaction.oncomplete = (event) => {
-            console.log('completed');
             subject.complete();
         };
 
@@ -58,7 +56,6 @@ export class IndexedDBService {
         const objectStore = transaction.objectStore('opponent');
         const objectStoreRequest = objectStore.add(item);
         objectStoreRequest.onsuccess = (event) => {
-            console.log('completed obj');
             subject.next(event);
         };
         return subject.asObservable();
@@ -67,12 +64,10 @@ export class IndexedDBService {
     putItem(item): Observable<any> {
 
         const subject = new Subject();
-        // open a read/write db transaction, ready for adding the data
+
         const transaction = this.db.transaction(['opponent'], 'readwrite');
 
-        // report on the success of the transaction completing, when everything is done
         transaction.oncomplete = (event) => {
-            console.log('completed');
             subject.complete();
         };
 
@@ -84,7 +79,6 @@ export class IndexedDBService {
         const objectStore = transaction.objectStore('opponent');
         const objectStoreRequest = objectStore.put(item);
         objectStoreRequest.onsuccess = (event) => {
-            console.log('completed obj');
             subject.next(event);
         };
         return subject.asObservable();
@@ -112,10 +106,9 @@ export class IndexedDBService {
 
     deleteItem(itemKey): Observable<any> {
         const subject = new Subject();
-        // open a read/write db transaction, ready for adding the data
+
         const transaction = this.db.transaction(['opponent'], 'readwrite');
 
-        // report on the success of the transaction completing, when everything is done
         transaction.oncomplete = (event) => {
             subject.complete();
         };

@@ -2,21 +2,21 @@
 
 @include mat-core();
 
-$primary: (
-  50: #FE1506,
-  100: #FE1506,
-  200: #FE1506,
-  300: #FE1506,
-  400: #FE1506,
-  500: #FE1506,
-  600: #FE1506,
-  700: #FE1506,
-  800: #FE1506,
-  900: #FE1506,
-  A100: #FE1506,
-  A200: #FE1506,
-  A400: #FE1506,
-  A700: #FE1506,
+$accent: (
+  50: #FFBF69,
+  100: #FFBF69,
+  200: #FFBF69,
+  300: #FFBF69,
+  400: #FFBF69,
+  500: #FFBF69,
+  600: #FFBF69,
+  700: #FFBF69,
+  800: #FFBF69,
+  900: #FFBF69,
+  A100: #FFBF69,
+  A200: #FFBF69,
+  A400: #FFBF69,
+  A700: #FFBF69,
   contrast: (
     50: $dark-primary-text,
     100: $dark-primary-text,
@@ -35,7 +35,7 @@ $primary: (
   )
 );
 
-$accent: (
+$primary: (
   50: #FF9906,
   100: #FF9906,
   200: #FF9906,
@@ -68,9 +68,42 @@ $accent: (
   )
 );
 
+$warn: (
+  50: #D34E4E,
+  100: #D34E4E,
+  200: #D34E4E,
+  300: #D34E4E,
+  400: #D34E4E,
+  500: #D34E4E,
+  600: #D34E4E,
+  700: #D34E4E,
+  800: #D34E4E,
+  900: #D34E4E,
+  A100: #D34E4E,
+  A200: #D34E4E,
+  A400: #D34E4E,
+  A700: #D34E4E,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
 $fg-notes-primary: mat-palette($primary);
 $fg-notes-accent: mat-palette($accent);
-$fg-notes-warn: mat-palette($mat-red);
+$fg-notes-warn: mat-palette($warn);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $fg-notes-theme: mat-light-theme($fg-notes-primary, $fg-notes-accent, $fg-notes-warn);

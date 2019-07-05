@@ -1,15 +1,15 @@
-import { Character } from './../opponents.service';
+import { Character } from '../opponents.service';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { OpponentsService, Opponent } from '../opponents.service';
 
 @Component({
-  selector: 'app-new-opponent',
-  templateUrl: './new-opponent.component.html',
-  styleUrls: ['./new-opponent.component.css']
+  selector: 'app-opponent',
+  templateUrl: './opponent.component.html',
+  styleUrls: ['./opponent.component.css']
 })
-export class NewOpponentComponent implements OnInit {
+export class OpponentComponent implements OnInit {
 
   opponentForm: FormGroup;
   submitted = false;
@@ -20,7 +20,7 @@ export class NewOpponentComponent implements OnInit {
   opponent: Opponent;
   opponentId: number;
 
-  constructor(public dialogRef: MatDialogRef<NewOpponentComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
+  constructor(public dialogRef: MatDialogRef<OpponentComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder, public opponentsService: OpponentsService) {
     // Get id when create a new Opponent
     if (data.opponentId !== undefined) { // Compare against undefined because opponentId could be 0 or 1

@@ -12,12 +12,12 @@ import {
   MatToolbarModule,
   MatButtonModule, MatSidenavModule,
   MatIconModule, MatListModule, MatCardModule,
-  MatInputModule, MatDialogModule, MatTableModule,
-  MatMenuModule, MatCheckboxModule, MatProgressSpinnerModule, MatAutocompleteModule, MatExpansionModule, MatTooltipModule, MatFormFieldModule, MatSelectModule
+  MatInputModule, MatDialogModule, MatMenuModule, 
+  MatAutocompleteModule, MatFormFieldModule, MatSelectModule
 } from '@angular/material';
 import { AppRoutingModule } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NewOpponentComponent } from './opponents/new-opponent/new-opponent.component';
+import { OpponentComponent } from './opponents/opponent/opponent.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoteComponent } from './opponents/note/note.component';
 
@@ -25,7 +25,7 @@ import { NoteComponent } from './opponents/note/note.component';
   declarations: [
     AppComponent,
     OpponentsComponent,
-    NewOpponentComponent,
+    OpponentComponent,
     NoteComponent
   ],
   imports: [
@@ -49,7 +49,7 @@ import { NoteComponent } from './opponents/note/note.component';
     MatSelectModule,
     MatDialogModule
   ],
-  entryComponents: [NewOpponentComponent, NoteComponent],
+  entryComponents: [OpponentComponent, NoteComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

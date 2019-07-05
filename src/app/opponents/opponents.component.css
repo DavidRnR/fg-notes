@@ -6,7 +6,7 @@
 
 .search-opponent-form {
   position: fixed;
-  width: 100%;
+  width: 20em;
   z-index: 500;
   background-color: #fafafa;
 }
@@ -39,4 +39,10 @@ mat-card-actions {
 mat-card-actions button {
   margin: 0  0.6em 0.6em 0.6em;
   font-size: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .search-opponent-form {
+    width: 100%;
+  }
 }
