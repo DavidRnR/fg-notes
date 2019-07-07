@@ -1,17 +1,5 @@
-<form class="search-opponent-form">
-  <mat-form-field class="full-width">
-    <input type="text" placeholder="Search Opponent" aria-label="Number" matInput [formControl]="myControl"
-      [matAutocomplete]="auto">
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOpponents | async" [value]="option.cfn">
-        {{option.cfn}}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
-</form>
-
 <div class="cards-container">
-  <mat-card *ngFor="let opponent of filteredOpponents | async">
+  <mat-card *ngFor="let opponent of opponentsFiltered | async">
     <mat-card-header>
       <div mat-card-avatar class="header-image" [style.backgroundImage]="'url('+ opponent.character.image +')'"></div>
       <div class="card-header-text">
@@ -49,6 +37,13 @@
     </mat-card-actions>
   </mat-card>
 </div>
+
+<section *ngIf="opponents.length === 0" class="no-opponents-container">
+  <h3>Please add an opponent.</h3>
+  <div class="logo-container">
+    <!-- Image background -->
+ </div>
+</section>
 
 <div class="add-opponent-container">
   <button mat-fab color="primary" aria-label="Add Opponent" (click)="onAddOpponent()">

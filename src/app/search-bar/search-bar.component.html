@@ -1,0 +1,13 @@
+<form>
+    <div class="form-input-with-icon">
+      <input class="form-input" type="text" placeholder="Search Opponent" aria-label="Number" matInput
+        [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-icon>search</mat-icon>
+    </div>
+
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onSelectOption($event)">
+      <mat-option *ngFor="let option of filteredValues | async" [value]="option[fieldCompare]">
+        {{option[fieldCompare]}}
+      </mat-option>
+    </mat-autocomplete>
+</form>

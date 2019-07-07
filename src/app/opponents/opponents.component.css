@@ -4,19 +4,12 @@
   right: 1em;
 }
 
-.search-opponent-form {
-  position: fixed;
-  width: 20em;
-  z-index: 500;
-  background-color: #fafafa;
-}
-
 .cards-container {
-  margin: 5em 0;
-}
-
-mat-card {
-  margin: 1.5em 0;
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  grid-column-gap: 2%;
+  grid-row-gap: 2em;
+  margin-top: 2em;
 }
 
 mat-card .header-image {
@@ -41,7 +34,34 @@ mat-card-actions button {
   font-size: 0.7rem;
 }
 
+.no-opponents-container {
+  display: flex;
+  -webkit-box-pack: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  background-image: url("../../assets/fg-notes-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+}
+
+@media (max-width: 1279px) {
+  .cards-container {
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 2%;
+  }
+}
+
 @media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 100%;
+    grid-column-gap: none;
+  }
+
   .search-opponent-form {
     width: 100%;
   }

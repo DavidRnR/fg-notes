@@ -13,20 +13,22 @@ import {
   MatButtonModule, MatSidenavModule,
   MatIconModule, MatListModule, MatCardModule,
   MatInputModule, MatDialogModule, MatMenuModule, 
-  MatAutocompleteModule, MatFormFieldModule, MatSelectModule
+  MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatSnackBarModule
 } from '@angular/material';
 import { AppRoutingModule } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OpponentComponent } from './opponents/opponent/opponent.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoteComponent } from './opponents/note/note.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OpponentsComponent,
     OpponentComponent,
-    NoteComponent
+    NoteComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { NoteComponent } from './opponents/note/note.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   entryComponents: [OpponentComponent, NoteComponent],
   providers: [],

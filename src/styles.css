@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   --fg-notes-primary: #FF9906;
-  --fg-notes-accent: red;
+  --fg-notes-accent: #FFBF69;
   --fg-notes-href: #003DA5;
   --fg-notes-background: #ECECEC;
 }
@@ -27,6 +27,12 @@ body {
   display: flex;
   justify-content: flex-end;
   padding: 1em 0;
+}
+
+.mat-snack-bar-container {
+  background-color: red;
+  font-weight: bold;
+  color: white
 }
 
 /* Mobile */

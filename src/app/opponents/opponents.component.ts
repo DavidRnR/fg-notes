@@ -1,9 +1,10 @@
+import { SearchBarService } from './../search-bar/search-bar.service';
 import { OpponentsService, Opponent } from './opponents.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { OpponentComponent } from './opponent/opponent.component';
 import { NoteComponent } from './note/note.component';
 
@@ -14,23 +15,17 @@ import { NoteComponent } from './note/note.component';
 })
 export class OpponentsComponent implements OnInit {
 
-  myControl = new FormControl();
-  filteredOpponents: Observable<any[]>;
-
   opponents: Opponent[] = [];
+  opponentsFiltered: Observable<Opponent[]>;
   opponentSelected: Opponent;
 
-  constructor(public dialog: MatDialog, private opponentsService: OpponentsService) { }
+  constructor(public dialog: MatDialog, private opponentsService: OpponentsService, 
+              private searchBarService: SearchBarService, private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.filteredOpponents = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => {
-        return this._filter(value)
-      })
-    );
-
     this.getOpponents(true);
+
+    this.opponentsFiltered = this.searchBarService.connectSelected();
   }
 
   onAddOpponent() {
@@ -81,8 +76,9 @@ export class OpponentsComponent implements OnInit {
     this.opponentsService.deleteOpponent(opponent).subscribe(opponent => {
       this.getOpponents(true);
     }, (error) => {
-      // this.openSnackBar(error, 'error');
-      // Hide Loading
+      this._snackBar.open( 'Oops! Something went wrong', null , {
+        duration: 2000,
+      });
     });
   }
 
@@ -97,12 +93,14 @@ export class OpponentsComponent implements OnInit {
   private getOpponents(resetControl = false) {
     this.opponentsService.getOpponents().subscribe(opponents => {
       this.opponents = opponents;
+      this.searchBarService.setSearchOption(this.opponents, 'cfn');
       if (resetControl) {
-        this.myControl.reset();
+        this.searchBarService.resetControl();
       }
     }, (error) => {
-      // this.openSnackBar(error, 'error');
-      // Hide Loading
+      this._snackBar.open( 'Oops! Something went wrong', null , {
+        duration: 2000,
+      });
     });
   }
 
@@ -110,23 +108,20 @@ export class OpponentsComponent implements OnInit {
     this.opponentsService.addOpponent(this.opponentSelected).subscribe((opponent: Opponent) => {
       this.getOpponents(true);
     }, (error) => {
-      // this.openSnackBar(error, 'error');
-      // Hide Loading
+      this._snackBar.open( 'Oops! Something went wrong', null , {
+        duration: 2000,
+      });
     });
   }
 
   private updateOpponent() {
     this.opponentsService.updateOpponent(this.opponentSelected).subscribe((opponent: Opponent) => {
-      this.getOpponents(true);
+      this.getOpponents();
     }, (error) => {
-      // this.openSnackBar(error, 'error');
-      // Hide Loading
+      this._snackBar.open( 'Oops! Something went wrong', null , {
+        duration: 2000,
+      });
     });
   }
 
-  private _filter(value: string): any {
-    const filterValue = (value) ? value.toLowerCase() : '';
-
-    return this.opponents.filter(op => op.cfn.toLowerCase().indexOf(filterValue) === 0);
-  }
 }
