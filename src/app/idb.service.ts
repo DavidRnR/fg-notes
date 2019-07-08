@@ -126,4 +126,21 @@ export class IndexedDBService {
         return subject.asObservable();
     }
 
+    deleteDatabase(): Observable<any> {
+        const subject = new Subject();
+
+        const DBDeleteRequest = window.indexedDB.deleteDatabase('fg-notes');
+
+        DBDeleteRequest.onerror = (error) => {
+            console.error(error);
+            subject.error(error);
+        };
+
+        DBDeleteRequest.onsuccess = (event) => {
+            console.log('end');
+            subject.next(event);
+        };
+
+        return subject.asObservable();
+    }
 }

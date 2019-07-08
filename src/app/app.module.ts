@@ -13,7 +13,7 @@ import {
   MatButtonModule, MatSidenavModule,
   MatIconModule, MatListModule, MatCardModule,
   MatInputModule, MatDialogModule, MatMenuModule, 
-  MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatSnackBarModule
+  MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatSnackBarModule, MatProgressSpinnerModule
 } from '@angular/material';
 import { AppRoutingModule } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoteComponent } from './opponents/note/note.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SnackBarMessageModule } from './snackbar/snackbar-message.module';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SnackBarMessageModule } from './snackbar/snackbar-message.module';
     OpponentsComponent,
     OpponentComponent,
     NoteComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +53,10 @@ import { SnackBarMessageModule } from './snackbar/snackbar-message.module';
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
     SnackBarMessageModule
   ],
-  entryComponents: [OpponentComponent, NoteComponent],
+  entryComponents: [OpponentComponent, NoteComponent, SettingsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -23,7 +23,7 @@
     <mat-card-content>
       <mat-list>
         <mat-list-item *ngFor="let note of opponent.notes; index as i">
-          {{note}} 
+          {{note}}
           <button mat-icon-button color="warn" aria-label="Delete Note" (click)="onDeleteNote(opponent, i)">
             <mat-icon>clear</mat-icon>
           </button>
@@ -38,11 +38,15 @@
   </mat-card>
 </div>
 
-<section *ngIf="opponents.length === 0" class="no-opponents-container">
-  <h3>Please add an opponent.</h3>
-  <div class="logo-container">
-    <!-- Image background -->
- </div>
+<section *ngIf="loading" class="no-opponents-container">
+    <mat-progress-spinner [color]="'primary'" [mode]="'indeterminate'" [value]="30" [diameter]="50">
+      </mat-progress-spinner>
+</section>
+<section *ngIf="(opponentsFiltered | async)?.length === 0 && !loading" class="no-opponents-container">
+    <h3>Please add an opponent.</h3>
+    <div class="logo-container">
+      <!-- Image background -->
+    </div>
 </section>
 
 <div class="add-opponent-container">

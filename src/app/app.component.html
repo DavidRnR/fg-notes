@@ -10,21 +10,25 @@
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav">
       <div class="sidenav-content-container">
-        <section>
-          Take notes about your Street Fighter V opponents
-        </section>
+        <mat-nav-list>
+          <mat-list-item>
+            <button mat-icon-button color="primary" (click)="showSettings()">
+              Settings <mat-icon>settings</mat-icon>
+            </button>
+          </mat-list-item>
+        </mat-nav-list>
         <div class="logo-container">
-           <!-- Image background -->
+          <!-- Image background -->
         </div>
         <section class="footer">
           <div>
-              Created by David Martín
-              <i class="fab fa-twitter fa-fw"></i>
-              <i class="far fa-envelope fa-fw"></i>
+            Created by David Martín
+            <i class="fab fa-twitter fa-fw"></i>
+            <i class="far fa-envelope fa-fw"></i>
           </div>
           <div>
-              Donate
-              <i class="fab fa-paypal"></i>
+            Donate
+            <i class="fab fa-paypal"></i>
           </div>
         </section>
       </div>

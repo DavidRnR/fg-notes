@@ -24,7 +24,7 @@ mat-toolbar button {
 }
 
 .sidenav-content-container {
-  font-size: 2rem;
+  font-size: 1rem;
   padding: 0.8em;
   color: white;
   height: 100%;
@@ -58,6 +58,15 @@ mat-toolbar button {
 
 .sidenav-container mat-sidenav-content {
   padding: 0.5em;
+}
+
+.sidenav-content-container mat-nav-list, 
+.sidenav-content-container mat-nav-list mat-list-item button {
+  width: 100%;
+}
+
+.sidenav-content-container mat-nav-list mat-list-item button {
+  background-color: white;
 }
 
 

@@ -17,6 +17,7 @@ export class OpponentsComponent implements OnInit {
   opponents: Opponent[] = [];
   opponentsFiltered: Observable<Opponent[]>;
   opponentSelected: Opponent;
+  loading = false;
 
   constructor(public dialog: MatDialog, private opponentsService: OpponentsService,
     private searchBarService: SearchBarService, private snackbarService: SnackbarService) { }
@@ -106,15 +107,21 @@ export class OpponentsComponent implements OnInit {
   }
   //******************************************************* */
   private getOpponents(resetControl = false) {
+    // Show spinner
+    this.loading = true;
+
     this.opponentsService.getOpponents().subscribe(opponents => {
       this.opponents = opponents;
       this.searchBarService.setSearchOption(this.opponents, 'cfn');
       if (resetControl) {
         this.searchBarService.resetControl();
       }
+      // Hide spinner
+      this.loading = false;
     }, (error) => {
       this.openSnackBar('Oops! Something went wrong', 'error');
     });
+
   }
 
   private saveOpponent() {

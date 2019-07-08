@@ -30,7 +30,6 @@
   position: absolute;
   right: 6px;
   top: 8px;
-  color: var(--fg-notes-accent);
 }
 
 mat-option span {

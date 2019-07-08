@@ -16,14 +16,12 @@ export class SearchBarComponent implements OnInit {
   filteredValues: Observable<any[]>;
   fieldCompare: string;
 
-  constructor(private searchBarService: SearchBarService) { }
+  constructor(public searchBarService: SearchBarService) { }
 
   ngOnInit() {
     this.filteredValues = this.myControl.valueChanges.pipe(
       startWith(''),
-      map(value => {
-        return this._filter(value)
-      })
+      map(value => this._filter(value))
     );
 
     this.searchBarService.connect().subscribe((result: any) => {
@@ -33,6 +31,7 @@ export class SearchBarComponent implements OnInit {
     this.searchBarService.getResetControl().subscribe((clean) => {
       if (clean) {
         this.myControl.reset();
+        this.searchBarService.setSelectedValue([...this.dataValues]);
       }
     });
   }
