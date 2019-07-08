@@ -8,7 +8,8 @@
 
   <mat-form-field class="full-width">
     <textarea matInput placeholder="Note" rows="3" formControlName="note"></textarea>
-    <mat-error *ngIf="noteForm.get('note').invalid">Please write a note about this opponent</mat-error>
+    <mat-error *ngIf="noteForm.get('note').getError('required')">Please write a note about this opponent</mat-error>
+    <mat-error *ngIf="noteForm.get('note').getError('maxlength')">Note must be less or equal than 80 chars</mat-error>
   </mat-form-field>
 
   <section class="form-actions">

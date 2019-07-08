@@ -21,6 +21,7 @@ import { OpponentComponent } from './opponents/opponent/opponent.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoteComponent } from './opponents/note/note.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { SnackBarMessageModule } from './snackbar/snackbar-message.module';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
-    MatSnackBarModule
+    SnackBarMessageModule
   ],
   entryComponents: [OpponentComponent, NoteComponent],
   providers: [],

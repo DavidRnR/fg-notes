@@ -50,7 +50,7 @@ export class IndexedDBService {
 
         transaction.onerror = (error) => {
             console.error(error);
-            subject.next(error);
+            subject.error(error);
         };
 
         const objectStore = transaction.objectStore('opponent');

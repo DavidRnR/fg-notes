@@ -6,8 +6,8 @@
     </div>
 
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onSelectOption($event)">
-      <mat-option *ngFor="let option of filteredValues | async" [value]="option[fieldCompare]">
-        {{option[fieldCompare]}}
+      <mat-option *ngFor="let option of filteredValues | async" [value]="option.cfn">
+        {{option.name}}<span> - {{option.cfn}}</span>
       </mat-option>
     </mat-autocomplete>
 </form>

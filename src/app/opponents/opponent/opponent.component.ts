@@ -52,10 +52,10 @@ export class OpponentComponent implements OnInit {
         id: (this.opponent) ? this.opponent.id : this.opponentId,
         cfn: this.opponentForm.get('cfn').value,
         name: this.opponentForm.get('name').value,
-        character: this.characters.find( ( char: Character) => {
+        character: this.characters.find((char: Character) => {
           return char.id === this.opponentForm.get('character').value
         }),
-        notes: (this.opponent) ? this.opponent.notes : [this.opponentForm.get('note').value]
+        notes: (this.opponent) ? this.opponent.notes : this.getNoteValue(this.opponentForm.get('note').value)
       };
 
       this.dialogRef.close(opponent);
@@ -70,12 +70,23 @@ export class OpponentComponent implements OnInit {
 
   private createForm() {
     this.characterSelected = (this.opponent && this.opponent.character.id) ? this.opponent.character : null;
-    
+
     this.opponentForm = this.formBuilder.group({
-      cfn: [(this.opponent && this.opponent.cfn) ? this.opponent.cfn : null , [Validators.required, Validators.maxLength(50)]],
-      name: [(this.opponent && this.opponent.name) ? this.opponent.name : null, [Validators.required, Validators.maxLength(50)]],
-      character: [ (this.characterSelected) ? this.characterSelected.id : null, [Validators.required]],
-      note: [null, [Validators.maxLength(255)]],
+      cfn: [(this.opponent && this.opponent.cfn) ? this.opponent.cfn : null, [Validators.required, Validators.maxLength(25)]],
+      name: [(this.opponent && this.opponent.name) ? this.opponent.name : null, [Validators.required, Validators.maxLength(30)]],
+      character: [(this.characterSelected) ? this.characterSelected.id : null, [Validators.required]],
+      note: [null, [Validators.maxLength(80)]],
     });
+  }
+
+  private getNoteValue(value: string): string[] {
+    if (value) {
+      const result =  value.trim();
+      if (result === '') {
+        return null;
+      }
+      return [result];
+    }
+    return null;
   }
 }

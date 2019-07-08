@@ -35,6 +35,17 @@ body {
   color: white
 }
 
+/* Snackbar */
+.snackbar-main-error {
+  background-color: red;
+  color: white;
+}
+
+.snackbar-main-confirm {
+  background-color: white;
+  color: var(--fg-notes-accent);
+}
+
 /* Mobile */
 @media (max-width: 768px) {
 

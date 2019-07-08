@@ -9,7 +9,7 @@
   grid-template-columns: 32% 32% 32%;
   grid-column-gap: 2%;
   grid-row-gap: 2em;
-  margin-top: 2em;
+  margin: 2em 0;
 }
 
 mat-card .header-image {
@@ -18,10 +18,16 @@ mat-card .header-image {
 
 mat-card .card-header-text {
   flex: 1;
+  word-break: break-word;
 }
 
 mat-card .card-header-text strong {
   margin-right: 0.5em;
+}
+
+mat-list-item {
+  word-break: break-word;
+  margin: 1em 0;
 }
 
 mat-card-actions {

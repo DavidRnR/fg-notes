@@ -6,7 +6,7 @@ main {
 
 mat-toolbar {
   justify-content: space-between;
-  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(250,250,250,1) 64%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(250, 250, 250, 1) 64%);
 }
 
 mat-toolbar button {
@@ -25,6 +25,7 @@ mat-toolbar button {
 
 .sidenav-content-container {
   font-size: 2rem;
+  padding: 0.8em;
   color: white;
   height: 100%;
   display: flex;
@@ -32,10 +33,7 @@ mat-toolbar button {
   align-items: center;
   flex-direction: column;
   text-align: center;
-}
-
-.sidenav-content-container section {
-  padding: 2em;
+  box-sizing: border-box;
 }
 
 .logo-container {
@@ -48,6 +46,10 @@ mat-toolbar button {
 
 .footer {
   font-size: 1.5rem;
+}
+
+.footer div {
+  padding: 0.5em 0;
 }
 
 .sidenav-container {
@@ -71,13 +73,21 @@ mat-toolbar button {
     width: 70vw;
   }
 
+  .sidenav-content-container {
+    font-size: 1.8rem;
+  }
+
   .footer {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .search-bar-container {
     width: 90%;
+  }
+
+  .footer {
+    font-size: 0.8rem;
   }
 }

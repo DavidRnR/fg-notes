@@ -1,0 +1,44 @@
+.snackbar-message {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+}
+
+.snackbar-message mat-icon {
+  margin-right: 0.5em;
+}
+
+.close-snackbar {
+  position: relative;
+  right: 10px
+}
+
+.snackbar-message-confirm {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.snackbar-confirm-question {
+  margin-right: 1em;
+}
+
+.snackbar-confirm-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.snackbar-confirm-actions button:first-child {
+  margin-right: 0.5em;
+}
+
+.snackbar-confirm-actions button:first-child {
+  background-color: white;
+}
+
+.snackbar-confirm-actions button:first-child mat-icon {
+  color: grey;
+}

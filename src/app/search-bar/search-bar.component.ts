@@ -30,10 +30,6 @@ export class SearchBarComponent implements OnInit {
       this.dataValues = result;
     });
 
-    this.searchBarService.getFieldCompare().subscribe((field) => {
-      this.fieldCompare = field;
-    });
-
     this.searchBarService.getResetControl().subscribe((clean) => {
       if (clean) {
         this.myControl.reset();
@@ -51,7 +47,9 @@ export class SearchBarComponent implements OnInit {
   private _filter(value: string): any {
     const filterValue = (value) ? value.toLowerCase() : '';
 
-    return this.dataValues.filter((op: any) => op.cfn.toLowerCase().indexOf(filterValue) === 0);
+    return this.dataValues.filter((op: any) => {
+      return (op.cfn.toLowerCase().indexOf(filterValue) === 0) || (op.name.toLowerCase().indexOf(filterValue) === 0);
+    });
   }
 
 }

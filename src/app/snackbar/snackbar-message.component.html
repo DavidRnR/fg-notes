@@ -1,0 +1,17 @@
+<div *ngIf="type && type.error" class="snackbar-message">
+  <mat-icon>error_outline</mat-icon>{{message}}
+</div>
+<div *ngIf="type && type.success" class="snackbar-message">
+  <mat-icon>check_circle_outline</mat-icon>{{message}}
+</div>
+<div *ngIf="type && type.confirm" class="snackbar-message-confirm">
+  <section class="snackbar-confirm-question">{{message}}</section>
+  <section class="snackbar-confirm-actions">
+    <button mat-mini-fab (click)="onDismiss()">
+      <mat-icon aria-label="Cancel">close</mat-icon>
+    </button>
+    <button mat-mini-fab color="primary" (click)="onConfirm()">
+      <mat-icon aria-label="Confirm">check</mat-icon>
+    </button>
+  </section>
+</div>

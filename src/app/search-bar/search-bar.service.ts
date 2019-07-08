@@ -8,13 +8,11 @@ export class SearchBarService {
   private optionsSubject = new BehaviorSubject<any[]>([]);
   private searchOption = [];
   private optionsSelectedSubject = new BehaviorSubject<any[]>([]);
-  private fieldCompare = new BehaviorSubject<string>('');
   private control = new BehaviorSubject<boolean>(false);
 
   constructor() { }
 
   public setSearchOption(options: any, fieldCompare: string) {
-    this.fieldCompare.next(fieldCompare);
     this.searchOption = options;
     this.optionsSubject.next(this.searchOption);
     this.optionsSelectedSubject.next(this.searchOption);
@@ -26,10 +24,6 @@ export class SearchBarService {
 
   public resetControl() {
     this.control.next(true);
-  }
-
-  public getFieldCompare(): Observable<string> {
-    return this.fieldCompare.asObservable();
   }
 
   public getResetControl(): Observable<boolean> {
