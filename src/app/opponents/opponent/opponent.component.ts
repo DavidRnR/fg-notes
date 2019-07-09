@@ -52,9 +52,7 @@ export class OpponentComponent implements OnInit {
         id: (this.opponent) ? this.opponent.id : this.opponentId,
         cfn: this.opponentForm.get('cfn').value,
         name: this.opponentForm.get('name').value,
-        character: this.characters.find((char: Character) => {
-          return char.id === this.opponentForm.get('character').value
-        }),
+        character: this.characterSelected,
         notes: (this.opponent) ? this.opponent.notes : this.getNoteValue(this.opponentForm.get('note').value)
       };
 

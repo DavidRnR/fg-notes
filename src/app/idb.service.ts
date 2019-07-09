@@ -128,16 +128,15 @@ export class IndexedDBService {
 
     deleteDatabase(): Observable<any> {
         const subject = new Subject();
-
+        this.db.close();
         const DBDeleteRequest = window.indexedDB.deleteDatabase('fg-notes');
-
+        
         DBDeleteRequest.onerror = (error) => {
             console.error(error);
             subject.error(error);
         };
 
         DBDeleteRequest.onsuccess = (event) => {
-            console.log('end');
             subject.next(event);
         };
 

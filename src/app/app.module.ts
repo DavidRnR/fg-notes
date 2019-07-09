@@ -15,7 +15,7 @@ import {
   MatInputModule, MatDialogModule, MatMenuModule,
   MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatSnackBarModule, MatProgressSpinnerModule
 } from '@angular/material';
-import { AppRoutingModule } from './app.routing';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OpponentComponent } from './opponents/opponent/opponent.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -40,7 +40,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     BrowserModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

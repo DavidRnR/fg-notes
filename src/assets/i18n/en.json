@@ -19,5 +19,8 @@
     "settings": "Settings",
     "lang": "Language",
     "restoreApp": "Restore Application",
-    "restoreAppQuestion": "Are you sure you want to restore the App? All data will be deleted"
+    "restoreAppQuestion": "Are you sure you want to restore the App? All data will be deleted",
+    "deleteOpponentQuestion": "Are you sure you want to delete",
+    "deleteNoteQuestion": "Are you sure you want to delete this note?",
+    "somethingWentWrong": "Oops! Something went wrong..."
 }

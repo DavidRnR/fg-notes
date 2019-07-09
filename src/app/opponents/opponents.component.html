@@ -24,6 +24,9 @@
       <mat-list>
         <mat-list-item *ngFor="let note of opponent.notes; index as i">
           {{note}}
+          <button mat-icon-button color="accent" aria-label="Edit Note" (click)="onEditNote(opponent, note, i)">
+            <mat-icon>edit</mat-icon>
+          </button>
           <button mat-icon-button color="warn" aria-label="Delete Note" (click)="onDeleteNote(opponent, i)">
             <mat-icon>clear</mat-icon>
           </button>

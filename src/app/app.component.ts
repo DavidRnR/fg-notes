@@ -31,11 +31,11 @@ export class AppComponent {
   }
 
   private initLang() {
-    const lang = localStorage.getItem('lang');
-    if (lang) {
-      this.translateService.setDefaultLang(lang);
-    } else {
-      localStorage.setItem('lang', 'en');
-    }
+    let lang = localStorage.getItem('lang');
+    if (!lang) {
+      lang = 'en';
+      localStorage.setItem('lang', lang);
+    } 
+    this.translateService.setDefaultLang(lang);
   }
 }

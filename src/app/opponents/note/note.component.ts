@@ -32,7 +32,7 @@ export class NoteComponent implements OnInit {
 
   private createForm() {
     this.noteForm = this.formBuilder.group({
-      note: [null, [Validators.required, Validators.maxLength(80)]],
+      note: [ (this.data && this.data.note) ? this.data.note : null, [Validators.required, Validators.maxLength(80)]],
     });
   }
 }

@@ -1,11 +1,12 @@
 import { SearchBarService } from './../search-bar/search-bar.service';
 import { OpponentsService, Opponent } from './opponents.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscriber, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material';
 import { OpponentComponent } from './opponent/opponent.component';
 import { NoteComponent } from './note/note.component';
 import { SnackbarService } from '../snackbar/snackbar-message.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-opponents',
@@ -20,7 +21,8 @@ export class OpponentsComponent implements OnInit {
   loading = false;
 
   constructor(public dialog: MatDialog, private opponentsService: OpponentsService,
-    private searchBarService: SearchBarService, private snackbarService: SnackbarService) { }
+    private searchBarService: SearchBarService, private snackbarService: SnackbarService,
+    private translateService: TranslateService) { }
 
   ngOnInit() {
     this.getOpponents(true);
@@ -73,13 +75,13 @@ export class OpponentsComponent implements OnInit {
   }
 
   onDeleteOpponent(opponent: Opponent) {
-    const confirmSnackBar$: Subscription = this.openConfirmSnackBar(`Are you sure you want to delete ${opponent.name}`, 'confirm', 'snackbar-main-confirm')
+    const confirmSnackBar$: Subscription = this.openConfirmSnackBar(`${this.translateService.instant('deleteOpponentQuestion')} ${opponent.name}`, 'confirm', 'snackbar-main-confirm')
       .subscribe((confirm: boolean) => {
         if (confirm) {
           this.opponentsService.deleteOpponent(opponent).subscribe(opponent => {
             this.getOpponents(true);
           }, (error) => {
-            this.openSnackBar('Oops! Something went wrong', 'error');
+            this.openSnackBar(this.translateService.instant('somethingWentWrong'), 'error');
           });
         }
       }, (error) => {
@@ -89,8 +91,23 @@ export class OpponentsComponent implements OnInit {
       });
   }
 
+  onEditNote(opponent: Opponent, note:string, noteIndex: number) {
+    this.opponentSelected = opponent;
+
+    const dialogRef = this.dialog.open(NoteComponent, {
+      width: '450px', data: {note: note}
+    });
+
+    dialogRef.afterClosed().subscribe((noteResult: string) => {
+      if (noteResult) {
+        this.opponentSelected.notes[noteIndex] = noteResult;
+        this.updateOpponent();
+      }
+    });
+  }
+
   onDeleteNote(opponent: Opponent, noteIndex: number) {
-    const confirmSnackBar$: Subscription = this.openConfirmSnackBar(`Are you sure you want to delete this note?`, 'confirm', 'snackbar-main-confirm')
+    const confirmSnackBar$: Subscription = this.openConfirmSnackBar(this.translateService.instant('deleteNoteQuestion'), 'confirm', 'snackbar-main-confirm')
       .subscribe((confirm: boolean) => {
         if (confirm) {
           opponent.notes = opponent.notes.filter((note: string, index: number) => {
@@ -119,7 +136,7 @@ export class OpponentsComponent implements OnInit {
       // Hide spinner
       this.loading = false;
     }, (error) => {
-      this.openSnackBar('Oops! Something went wrong', 'error');
+      this.openSnackBar(this.translateService.instant('somethingWentWrong'), 'error');
     });
 
   }
@@ -128,7 +145,7 @@ export class OpponentsComponent implements OnInit {
     this.opponentsService.addOpponent(this.opponentSelected).subscribe((opponent: Opponent) => {
       this.getOpponents(true);
     }, (error) => {
-      this.openSnackBar('Oops! Something went wrong', 'error');
+      this.openSnackBar(this.translateService.instant('somethingWentWrong'), 'error');
     });
   }
 
@@ -136,7 +153,7 @@ export class OpponentsComponent implements OnInit {
     this.opponentsService.updateOpponent(this.opponentSelected).subscribe((opponent: Opponent) => {
       this.getOpponents();
     }, (error) => {
-      this.openSnackBar('Oops! Something went wrong', 'error');
+      this.openSnackBar(this.translateService.instant('somethingWentWrong'), 'error');
     });
   }
 
