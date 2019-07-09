@@ -1,6 +1,9 @@
 /* Custom Input - Main Input */
 .form-input {
   position: relative;
+  font: initial;
+  font-size: 0.8rem;
+  font-family: Roboto;
   height: 42px;
   width: 100%;
   padding-left: 10px;

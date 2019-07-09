@@ -1,22 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SnackbarService } from '../snackbar/snackbar-message.component';
 import { Observable, Subscription } from 'rxjs';
 import { IndexedDBService } from '../idb.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
 })
-export class SettingsComponent implements OnInit {
-  languages = [{id: 0, name: 'English'}, {id: 1, name: 'Spanish'}, {id: 3, name: 'Japanese'}];
-  constructor(private indexedDB: IndexedDBService, private snackbarService: SnackbarService) { }
-
-  ngOnInit() {
-  }
+export class SettingsComponent {
+  languages = [{id: 'en', name: 'English'}, {id: 'es', name: 'Spanish'}, 
+               {id: 'jp', name: 'Japanese'}, {id: 'ko', name: 'Korean'}];
+  constructor(private indexedDB: IndexedDBService, private snackbarService: SnackbarService, private translateService: TranslateService) {}
 
   onDeleteDatabase() {
-    const confirmSnackBar$: Subscription = this.openConfirmSnackBar(`Are you sure you want to delete the Database?`, 'confirm', 'snackbar-main-confirm')
+    const confirmSnackBar$: Subscription = this.openConfirmSnackBar(this.translateService.instant('restoreAppQuestion'), 'confirm', 'snackbar-main-confirm')
     .subscribe((confirm: boolean) => {
       if (confirm) {
         this.indexedDB.deleteDatabase().subscribe( () => {
@@ -31,6 +30,10 @@ export class SettingsComponent implements OnInit {
     });
   }
   
+  onChangeLanguage($event) {
+    this.translateService.setDefaultLang($event.value);
+    localStorage.setItem('lang', $event.value);
+  }
   private openConfirmSnackBar(message, type, className): Observable<boolean> {
     this.snackbarService.status.next({ message: message, type: type, class: className });
     return this.snackbarService.onConfirmSnackbar();

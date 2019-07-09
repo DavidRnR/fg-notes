@@ -12,11 +12,11 @@
       <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="onEditOpponent(opponent)">
           <mat-icon color="accent">edit</mat-icon>
-          <span>Edit</span>
+          <span>{{ 'edit' | translate }}</span>
         </button>
         <button mat-menu-item (click)="onDeleteOpponent(opponent)">
           <mat-icon color="warn">delete</mat-icon>
-          <span>Delete</span>
+          <span>{{ 'delete' | translate }}</span>
         </button>
       </mat-menu>
     </mat-card-header>
@@ -32,7 +32,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-stroked-button (click)="onAddNote(opponent)">
-        ADD NOTE
+        {{ 'addNote' | translate }}
       </button>
     </mat-card-actions>
   </mat-card>
@@ -43,7 +43,7 @@
       </mat-progress-spinner>
 </section>
 <section *ngIf="(opponentsFiltered | async)?.length === 0 && !loading" class="no-opponents-container">
-    <h3>Please add an opponent.</h3>
+    <h3>{{ 'pleaseAddOpponent' | translate }}</h3>
     <div class="logo-container">
       <!-- Image background -->
     </div>

@@ -18,7 +18,7 @@ mat-toolbar button {
 }
 
 .sidenav {
-  width: 40vw;
+  width: 30vw;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.5942752100840336) 0%, rgba(255, 151, 0, 1) 100%);
   border: 1px solid black;
 }
@@ -45,11 +45,7 @@ mat-toolbar button {
 }
 
 .footer {
-  font-size: 1.5rem;
-}
-
-.footer div {
-  padding: 0.5em 0;
+  font-size: 1.2rem;
 }
 
 .sidenav-container {

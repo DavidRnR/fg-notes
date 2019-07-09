@@ -1,0 +1,23 @@
+{
+    "pleaseAddOpponent": "相手を追加してください",
+    "searchOpponent": "相手を検索",
+    "addNote": "メモを追加",
+    "errorNote": "Please write a note about this opponent",
+    "errorNoteChars": "Note must be less or equal than 80 chars",
+    "cfnError": "CFN is required",
+    "cfnErrorChars": "CFN must be less or equal than 25 chars",
+    "nameError": "Name is required",
+    "nameErrorChars": "Name must be less or equal than 30 chars",
+    "selectCharacter": "Please select a character",
+    "save": "Save",
+    "addOpponent": "Add Opponent",
+    "edit": "Edit",
+    "delete": "Delete",
+    "note": "Note",
+    "name": "Name",
+    "character": "Character",
+    "settings": "Settings",
+    "lang": "Language",
+    "restoreApp": "Restore Application",
+    "restoreAppQuestion": "Are you sure you want to restore the App? All data will be deleted"
+}

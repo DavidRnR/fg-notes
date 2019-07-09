@@ -12,17 +12,20 @@ import {
   MatToolbarModule,
   MatButtonModule, MatSidenavModule,
   MatIconModule, MatListModule, MatCardModule,
-  MatInputModule, MatDialogModule, MatMenuModule, 
+  MatInputModule, MatDialogModule, MatMenuModule,
   MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatSnackBarModule, MatProgressSpinnerModule
 } from '@angular/material';
 import { AppRoutingModule } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OpponentComponent } from './opponents/opponent/opponent.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NoteComponent } from './opponents/note/note.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SnackBarMessageModule } from './snackbar/snackbar-message.module';
 import { SettingsComponent } from './settings/settings.component';
+//Translation
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,16 @@ import { SettingsComponent } from './settings/settings.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => {
+
+          return new TranslateHttpLoader(http);
+        },
+        deps: [HttpClient]
+      }
+    }),
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,

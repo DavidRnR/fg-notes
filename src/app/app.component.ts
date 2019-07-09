@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IndexedDBService } from './idb.service';
 import { MatDialog } from '@angular/material';
 import { SettingsComponent } from './settings/settings.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,11 @@ import { SettingsComponent } from './settings/settings.component';
 })
 export class AppComponent {
   dbLoaded = false;
-  constructor(private indexedDB: IndexedDBService, public dialog: MatDialog) {
+  constructor(private indexedDB: IndexedDBService, public dialog: MatDialog, private translateService: TranslateService) {
     this.indexedDB.initDB().subscribe( result => {
       this.dbLoaded = true;
     });
+    this.initLang();
   }
 
   showSettings() {
@@ -26,5 +28,14 @@ export class AppComponent {
  
       }
     });
+  }
+
+  private initLang() {
+    const lang = localStorage.getItem('lang');
+    if (lang) {
+      this.translateService.setDefaultLang(lang);
+    } else {
+      localStorage.setItem('lang', 'en');
+    }
   }
 }

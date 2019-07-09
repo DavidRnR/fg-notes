@@ -9,19 +9,19 @@
 
   <mat-form-field class="full-width">
     <input matInput placeholder="CFN" formControlName="cfn">
-    <mat-error *ngIf="opponentForm.get('cfn').getError('required')">CFN is required</mat-error>
-    <mat-error *ngIf="opponentForm.get('cfn').getError('maxlength')">CFN must be less or equal than 25 chars</mat-error>
+    <mat-error *ngIf="opponentForm.get('cfn').getError('required')">{{ 'cfnError' | translate }}</mat-error>
+    <mat-error *ngIf="opponentForm.get('cfn').getError('maxlength')">{{ 'cfnErrorChars' | translate }}</mat-error>
   </mat-form-field>
 
   <mat-form-field class="full-width">
-    <input matInput placeholder="Name" formControlName="name">
-    <mat-error *ngIf="opponentForm.get('name').getError('required')">Name is required</mat-error>
-    <mat-error *ngIf="opponentForm.get('name').getError('maxlength')">Name must be less or equal than 30 chars</mat-error>
+    <input matInput placeholder="{{ 'name' | translate }}" formControlName="name">
+    <mat-error *ngIf="opponentForm.get('name').getError('required')">{{ 'nameError' | translate }}</mat-error>
+    <mat-error *ngIf="opponentForm.get('name').getError('maxlength')">{{ 'nameErrorChars' | translate }}</mat-error>
   </mat-form-field>
 
   <section class="full-width select-character-container">
     <mat-form-field>
-      <mat-select placeholder="Character" formControlName="character" (selectionChange)="onSelectCharacter($event)">
+      <mat-select placeholder="{{ 'character' | translate }}" formControlName="character" (selectionChange)="onSelectCharacter($event)">
         <mat-option *ngFor="let character of characters" [value]="character.id">
           <div class="character-option">
             <img src="{{character.image}}" alt="Character {{character.name}}"> 
@@ -29,7 +29,7 @@
           </div>
         </mat-option>
       </mat-select>
-      <mat-error *ngIf="opponentForm.get('character').invalid">Please select a character</mat-error>
+      <mat-error *ngIf="opponentForm.get('character').invalid">{{ 'selectCharacter' | translate }}</mat-error>
     </mat-form-field>
     <div *ngIf="characterSelected" class="character-option">
       <img src="{{characterSelected.image}}" alt="Character {{characterSelected.name}}"> 
@@ -37,11 +37,11 @@
   </section>
 
   <mat-form-field *ngIf="!opponent" class="full-width">
-    <textarea matInput placeholder="Note" rows="3" formControlName="note"></textarea>
-    <mat-error *ngIf="opponentForm.get('note').invalid">Note must be less or equal than 80 chars</mat-error>
+    <textarea matInput placeholder="{{ 'note' | translate }}" rows="3" formControlName="note"></textarea>
+    <mat-error *ngIf="opponentForm.get('note').invalid">{{ 'noteErrorChars' | translate }}</mat-error>
   </mat-form-field>
 
   <section class="form-actions">
-    <button type="submit" mat-raised-button color="primary">{{(opponent) ? 'SAVE' : 'ADD OPPONENT'}}</button>
+    <button type="submit" mat-raised-button color="primary">{{(opponent) ? ('save' | translate) : ('addOpponent' | translate) }}</button>
   </section>
 </form>
