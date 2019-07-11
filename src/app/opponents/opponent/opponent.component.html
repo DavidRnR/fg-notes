@@ -22,7 +22,7 @@
   <section class="full-width select-character-container">
     <mat-form-field>
       <mat-select placeholder="{{ 'character' | translate }}" formControlName="character" (selectionChange)="onSelectCharacter($event)">
-        <mat-option *ngFor="let character of characters" [value]="character.id">
+        <mat-option *ngFor="let character of characters | orderAz" [value]="character.id">
           <div class="character-option">
             <img src="{{character.image}}" alt="Character {{character.name}}"> 
             <span>{{character.name}}</span>

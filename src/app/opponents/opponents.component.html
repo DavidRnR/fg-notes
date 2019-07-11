@@ -1,5 +1,5 @@
 <div class="cards-container">
-  <mat-card *ngFor="let opponent of opponentsFiltered | async">
+  <mat-card *ngFor="let opponent of opponentsFiltered | async | orderAz">
     <mat-card-header>
       <div mat-card-avatar class="header-image" [style.backgroundImage]="'url('+ opponent.character.image +')'"></div>
       <div class="card-header-text">

@@ -81,10 +81,10 @@ export class OpponentComponent implements OnInit {
     if (value) {
       const result =  value.trim();
       if (result === '') {
-        return null;
+        return [];
       }
       return [result];
     }
-    return null;
+    return [];
   }
 }
