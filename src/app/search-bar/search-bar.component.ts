@@ -47,7 +47,9 @@ export class SearchBarComponent implements OnInit {
     const filterValue = (value) ? value.toLowerCase() : '';
 
     return this.dataValues.filter((op: any) => {
-      return (op.cfn.toLowerCase().indexOf(filterValue) === 0) || (op.name.toLowerCase().indexOf(filterValue) === 0);
+      return (op.cfn.toLowerCase().indexOf(filterValue) === 0)
+        || (op.name.toLowerCase().indexOf(filterValue) === 0)
+        || (op.character.name.toLowerCase().indexOf(filterValue) === 0);
     });
   }
 

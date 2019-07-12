@@ -22,5 +22,6 @@
     "restoreAppQuestion": "Are you sure you want to restore the App? All data will be deleted",
     "deleteOpponentQuestion": "Are you sure you want to delete",
     "deleteNoteQuestion": "Are you sure you want to delete this note?",
-    "somethingWentWrong": "Oops! Something went wrong..."
+    "somethingWentWrong": "Oops! Something went wrong...",
+    "maxNotes": "Max. Notes is 15"
 }

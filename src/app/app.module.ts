@@ -28,11 +28,11 @@ import { SettingsComponent } from './settings/settings.component';
 
 // Pipes
 import { OrderAzPipe } from './pipes/order-az.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 //Translation
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 
 @NgModule({
   declarations: [
@@ -42,7 +42,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     NoteComponent,
     SearchBarComponent,
     SettingsComponent,
-    OrderAzPipe
+    OrderAzPipe,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

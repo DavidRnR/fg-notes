@@ -7,6 +7,7 @@ import { OpponentComponent } from './opponent/opponent.component';
 import { NoteComponent } from './note/note.component';
 import { SnackbarService } from '../snackbar/snackbar-message.component';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-opponents',
@@ -53,8 +54,12 @@ export class OpponentsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((note: string) => {
       if (note) {
-        this.opponentSelected.notes.push(note);
-        this.updateOpponent();
+        if (this.opponentSelected.notes.length < environment.maxNotes) {
+          this.opponentSelected.notes.push(note);
+          this.updateOpponent();
+        } else {
+          this.openSnackBar(this.translateService.instant('maxNotes'), 'error');
+        }
       }
     });
   }
@@ -75,7 +80,7 @@ export class OpponentsComponent implements OnInit {
   }
 
   onDeleteOpponent(opponent: Opponent) {
-    const confirmSnackBar$: Subscription = this.openConfirmSnackBar(`${this.translateService.instant('deleteOpponentQuestion')} ${opponent.name}`, 'confirm', 'snackbar-main-confirm')
+    const confirmSnackBar$: Subscription = this.openConfirmSnackBar(`${this.translateService.instant('deleteOpponentQuestion')} ${opponent.name}?`, 'confirm', 'snackbar-main-confirm')
       .subscribe((confirm: boolean) => {
         if (confirm) {
           this.opponentsService.deleteOpponent(opponent).subscribe(opponent => {

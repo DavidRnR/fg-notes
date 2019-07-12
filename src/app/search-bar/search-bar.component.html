@@ -1,14 +1,23 @@
 <form>
-    <div class="form-input-with-icon">
-      <input class="form-input" type="text" placeholder="{{ 'searchOpponent' | translate }}" aria-label="Number" matInput
-        [formControl]="myControl" [matAutocomplete]="auto">
-      <mat-icon color="accent" *ngIf="myControl.value === null">search</mat-icon>
-      <mat-icon color="warn" *ngIf="myControl.value  || myControl.value === ''" (click)="searchBarService.resetControl()">clear</mat-icon>
-    </div>
 
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onSelectOption($event)">
-      <mat-option *ngFor="let option of filteredValues | async" [value]="option.cfn">
-        {{option.name}}<span> - {{option.cfn}}</span>
-      </mat-option>
-    </mat-autocomplete>
+  <div class="form-input-with-icon">
+    <input class="form-input" type="text" placeholder="{{ 'searchOpponent' | translate }}" aria-label="Number" matInput
+      [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-icon color="accent" *ngIf="myControl.value === null">search</mat-icon>
+    <mat-icon color="warn" *ngIf="myControl.value  || myControl.value === ''" (click)="searchBarService.resetControl()">
+      clear</mat-icon>
+  </div>
+
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onSelectOption($event)">
+    <mat-option *ngFor="let option of filteredValues | async" [value]="option.cfn">
+      <div *ngIf="auto.isOpen" class="option-character-container">
+        <span>{{ option.name | truncate: 12 }}</span>
+        <span class="char-space">-</span>
+        <span class="cfn">{{ option.cfn | truncate: 12 }}</span>
+        <div class="character-option">
+          <img src="{{option.character.image}}" alt="Character {{option.character.name}}">
+        </div>
+      </div>
+    </mat-option>
+  </mat-autocomplete>
 </form>
