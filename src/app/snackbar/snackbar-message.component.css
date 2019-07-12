@@ -19,7 +19,8 @@
 .snackbar-message-confirm {
   display: flex;
   align-items: center;
-  font-weight: bold;
+  font-weight: initial;
+  color: black;
 }
 
 .snackbar-confirm-question {

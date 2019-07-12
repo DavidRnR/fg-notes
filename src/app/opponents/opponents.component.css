@@ -12,6 +12,12 @@
   margin: 2em 0;
 }
 
+mat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 mat-card .header-image {
   background-size: cover;
 }
@@ -25,6 +31,11 @@ mat-card .card-header-text strong {
   margin-right: 0.5em;
 }
 
+mat-card-content {
+  max-height: 190px;
+  overflow: auto;
+}
+
 mat-list-item {
   word-break: break-word;
   margin: 1em 0;
@@ -32,11 +43,11 @@ mat-list-item {
 
 mat-card-actions {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 mat-card-actions button {
-  margin: 0  0.6em 0.6em 0.6em;
+  margin: 0 0.6em 0.6em 0.6em;
   font-size: 0.7rem;
 }
 
@@ -70,5 +81,10 @@ mat-card-actions button {
 
   .search-opponent-form {
     width: 100%;
+  }
+
+  mat-card-content {
+    max-height: initial;
+    overflow: none;
   }
 }

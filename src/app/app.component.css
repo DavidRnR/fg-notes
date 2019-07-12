@@ -48,12 +48,21 @@ mat-toolbar button {
   font-size: 1.2rem;
 }
 
+.footer .version {
+  font-size: 0.6rem;
+}
+
 .sidenav-container {
   height: 100%;
 }
 
 .sidenav-container mat-sidenav-content {
   padding: 0.5em;
+}
+
+.sidenav-content-container mat-nav-list {
+  max-width: 10rem;
+  align-self: flex-end;
 }
 
 .sidenav-content-container mat-nav-list, 
@@ -88,6 +97,10 @@ mat-toolbar button {
 }
 
 @media (max-width: 768px) {
+  .sidenav-content-container mat-nav-list {
+    align-self: center;
+  }
+
   .search-bar-container {
     width: 90%;
   }
