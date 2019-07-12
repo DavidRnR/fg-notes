@@ -1,4 +1,4 @@
-import { IndexedDBService } from './../idb.service';
+import { IndexedDBService } from '../services/idb.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';

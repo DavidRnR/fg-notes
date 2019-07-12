@@ -1,10 +1,11 @@
 {
   "name": "fg-notes",
-  "version": "0.3",
+  "version": "0.4.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
+    "build-gh-pages": "ng build --prod --base-href https://davidrnr.github.io/fg-notes/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

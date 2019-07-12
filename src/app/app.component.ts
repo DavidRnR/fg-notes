@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IndexedDBService } from './idb.service';
+import { IndexedDBService } from './services/idb.service';
 import { MatDialog } from '@angular/material';
 import { SettingsComponent } from './settings/settings.component';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from './../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,15 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   dbLoaded = false;
-  constructor(private indexedDB: IndexedDBService, public dialog: MatDialog, private translateService: TranslateService) {
+  version = '';
+
+  constructor(private indexedDB: IndexedDBService, public dialog: MatDialog, 
+              private translateService: TranslateService) {
     this.indexedDB.initDB().subscribe( result => {
       this.dbLoaded = true;
     });
     this.initLang();
+    this.version = environment.version;
   }
 
   showSettings() {

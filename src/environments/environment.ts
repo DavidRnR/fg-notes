@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  maxNotes: 15
+  maxNotes: 15,
+  version: '0.4'
 };
 
 /*

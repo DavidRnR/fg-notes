@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SnackbarService } from '../snackbar/snackbar-message.component';
 import { Observable, Subscription } from 'rxjs';
-import { IndexedDBService } from '../idb.service';
+import { IndexedDBService } from '../services/idb.service';
 import { TranslateService } from '@ngx-translate/core';
 import { FormControl } from '@angular/forms';
 
