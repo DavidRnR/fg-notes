@@ -4,6 +4,32 @@
   right: 1em;
 }
 
+.add-opponent-container .relative-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 180px;
+}
+
+.add-opponent-container .relative-container .helper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 2em;
+  word-break: break-word;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.add-opponent-container .relative-container .helper mat-icon {
+  margin-right: 0.5em;
+}
+
+.add-opponent-container .relative-container button {
+  align-self: flex-end;
+}
+
 .cards-container {
   display: grid;
   grid-template-columns: 32% 32% 32%;
@@ -86,5 +112,18 @@ mat-card-actions button {
   mat-card-content {
     max-height: initial;
     overflow: none;
+  }
+
+  .add-opponent-container .relative-container {
+    height: 148px;
+  }
+
+  .add-opponent-container .relative-container .helper {
+    padding: 1em 0.5em;
+    max-width: 255px;
+  }
+
+  .add-opponent-container .relative-container .helper mat-icon {
+    margin-right: 0.2em;
   }
 }

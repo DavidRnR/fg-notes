@@ -23,5 +23,7 @@
     "deleteOpponentQuestion": "Are you sure you want to delete",
     "deleteNoteQuestion": "Are you sure you want to delete this note?",
     "somethingWentWrong": "Oops! Something went wrong...",
-    "maxNotes": "Max. Notes is 15"
+    "maxNotes": "Max. Notes is 15",
+    "clickHereTo": "Click here to",
+    "addAnOpponent": "Add an Opponent"
 }

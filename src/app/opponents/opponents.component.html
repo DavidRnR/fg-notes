@@ -42,18 +42,24 @@
 </div>
 
 <section *ngIf="loading" class="no-opponents-container">
-    <mat-progress-spinner [color]="'primary'" [mode]="'indeterminate'" [value]="30" [diameter]="50">
-      </mat-progress-spinner>
+  <mat-progress-spinner [color]="'primary'" [mode]="'indeterminate'" [value]="30" [diameter]="50">
+  </mat-progress-spinner>
 </section>
 <section *ngIf="(opponentsFiltered | async)?.length === 0 && !loading" class="no-opponents-container">
-    <h3>{{ 'pleaseAddOpponent' | translate }}</h3>
-    <div class="logo-container">
-      <!-- Image background -->
-    </div>
+  <h3>{{ 'pleaseAddOpponent' | translate }}</h3>
+  <div class="logo-container">
+    <!-- Image background -->
+  </div>
 </section>
 
-<div class="add-opponent-container">
-  <button mat-fab color="primary" aria-label="Add Opponent" (click)="onAddOpponent()">
-    <mat-icon>person_add</mat-icon>
-  </button>
-</div>
+<section class="add-opponent-container">
+  <div class="relative-container">
+    <div class="helper circleIn" *ngIf="(opponentsFiltered | async)?.length === 0">
+      <mat-icon color="accent">help_outline</mat-icon>
+      <span>{{ 'clickHereTo' | translate }} <strong>{{ 'addAnOpponent' | translate }}!</strong></span>
+    </div>
+    <button [class.zoomInOut]="(opponentsFiltered | async)?.length === 0" mat-fab color="primary" aria-label="Add Opponent" (click)="onAddOpponent()">
+      <mat-icon>person_add</mat-icon>
+    </button>
+  </div>
+</section>
