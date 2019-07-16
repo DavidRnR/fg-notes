@@ -34,6 +34,9 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+// Directives
+import { AutofocusDirective } from './directives/autofocus.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +46,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     SearchBarComponent,
     SettingsComponent,
     OrderAzPipe,
-    TruncatePipe
+    TruncatePipe,
+    AutofocusDirective
   ],
   imports: [
     BrowserModule,

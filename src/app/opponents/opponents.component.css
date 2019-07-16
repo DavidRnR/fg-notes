@@ -84,12 +84,18 @@ mat-card-actions button {
   align-items: center;
 }
 
+.no-opponents-container h1 {
+  font-size: 4rem;
+  font-family: 'Gloria Hallelujah', cursive;
+  margin: 0;
+}
+
 .logo-container {
   background-image: url("../../assets/fg-notes-logo.png");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 }
 
 @media (max-width: 1279px) {
@@ -125,5 +131,14 @@ mat-card-actions button {
 
   .add-opponent-container .relative-container .helper mat-icon {
     margin-right: 0.2em;
+  }
+
+  .no-opponents-container h1 {
+    font-size: 3rem;
+  }
+  
+  .logo-container {
+    width: 170px;
+    height: 170px;
   }
 }

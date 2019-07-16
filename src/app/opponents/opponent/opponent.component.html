@@ -8,7 +8,7 @@
 <form class="full-width" [formGroup]="opponentForm" (ngSubmit)="onSubmit()">
 
   <mat-form-field class="full-width">
-    <input matInput placeholder="CFN" formControlName="cfn">
+    <input matInput placeholder="CFN" formControlName="cfn" appAutofocus>
     <mat-error *ngIf="opponentForm.get('cfn').getError('required')">{{ 'cfnError' | translate }}</mat-error>
     <mat-error *ngIf="opponentForm.get('cfn').getError('maxlength')">{{ 'cfnErrorChars' | translate }}</mat-error>
   </mat-form-field>

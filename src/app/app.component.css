@@ -97,6 +97,10 @@ mat-toolbar button {
 }
 
 @media (max-width: 768px) {
+  mat-toolbar {
+    background: black;
+  }
+
   .sidenav-content-container mat-nav-list {
     align-self: center;
   }

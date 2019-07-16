@@ -134,7 +134,7 @@ export class OpponentsComponent implements OnInit {
 
     this.opponentsService.getOpponents().subscribe(opponents => {
       this.opponents = opponents;
-      this.searchBarService.setSearchOption(this.opponents, 'cfn');
+      this.searchBarService.setSearchOption(this.opponents);
       if (resetControl) {
         this.searchBarService.resetControl();
       }
