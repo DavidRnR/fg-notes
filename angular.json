@@ -30,7 +30,8 @@
                 "input": "src/custom-theme.scss"
               },
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/fonts.css"
             ],
             "scripts": []
           },

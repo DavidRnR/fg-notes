@@ -19,7 +19,7 @@ mat-toolbar button {
 
 .sidenav {
   width: 30vw;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5942752100840336) 0%, rgba(255, 151, 0, 1) 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0) 0%, rgba(255, 151, 0, 1) 100%);
   border: 1px solid black;
 }
 
