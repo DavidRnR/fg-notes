@@ -25,5 +25,6 @@
     "somethingWentWrong": "おっとっと！ 問題が発生しました...",
     "maxNotes": "最大 ノートは15です",
     "clickHereTo": "ここをクリックして",
-    "addAnOpponent": "相手を追加する"
+    "addAnOpponent": "相手を追加する",
+    "isAvailable": "利用可能です"
 }

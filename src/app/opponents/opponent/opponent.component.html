@@ -21,10 +21,15 @@
 
   <section class="full-width select-character-container">
     <mat-form-field>
-      <mat-select placeholder="{{ 'character' | translate }}" formControlName="character" (selectionChange)="onSelectCharacter($event)">
+      <mat-select placeholder="{{ 'character' | translate }}" formControlName="character"
+        (selectionChange)="onSelectCharacter($event)">
         <mat-option *ngFor="let character of characters | orderAz" [value]="character.id">
           <div class="character-option">
-            <img src="{{character.image}}" alt="Character {{character.name}}"> 
+            <picture>
+              <source type="image/webp" srcset="{{character.imageWebp}}">
+              <source type="image/jpeg" srcset="{{character.image}}">
+              <img src="{{character.image}}" alt="Character {{character.name}}">
+            </picture>
             <span>{{character.name}}</span>
           </div>
         </mat-option>
@@ -32,7 +37,11 @@
       <mat-error *ngIf="opponentForm.get('character').invalid">{{ 'selectCharacter' | translate }}</mat-error>
     </mat-form-field>
     <div *ngIf="characterSelected" class="character-option">
-      <img src="{{characterSelected.image}}" alt="Character {{characterSelected.name}}"> 
+      <picture>
+        <source type="image/webp" srcset="{{characterSelected.imageWebp}}">
+        <source type="image/jpeg" srcset="{{characterSelected.image}}">
+        <img src="{{characterSelected.image}}" alt="Character {{characterSelected.name}}">
+      </picture>
     </div>
   </section>
 
@@ -42,6 +51,7 @@
   </mat-form-field>
 
   <section class="form-actions">
-    <button type="submit" mat-raised-button color="primary">{{(opponent) ? ('save' | translate) : ('addOpponent' | translate) }}</button>
+    <button type="submit" mat-raised-button
+      color="primary">{{(opponent) ? ('save' | translate) : ('addOpponent' | translate) }}</button>
   </section>
 </form>

@@ -8,6 +8,7 @@ export interface Character {
     id: number;
     name: string;
     image: string;
+    imageWebp: string;
 }
 
 export interface Opponent {

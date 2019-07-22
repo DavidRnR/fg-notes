@@ -15,7 +15,11 @@
         <span class="char-space">-</span>
         <span class="cfn">{{ option.cfn | truncate: 12 }}</span>
         <div class="character-option">
-          <img src="{{option.character.image}}" alt="Character {{option.character.name}}">
+          <picture>
+            <source type="image/webp" srcset="{{option.character.imageWebp}}">
+            <source type="image/jpeg" srcset="{{option.character.image}}">
+            <img src="{{option.character.image}}" alt="Character {{option.character.name}}">
+          </picture>
         </div>
       </div>
     </mat-option>

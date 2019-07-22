@@ -36,12 +36,8 @@ mat-toolbar button {
   box-sizing: border-box;
 }
 
-.logo-container {
-  background-image: url("../assets/fg-notes-logo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 50%;
-  height: 50%;
+.logo-container img {
+  width: 80%;
 }
 
 .footer {

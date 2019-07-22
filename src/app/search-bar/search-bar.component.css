@@ -47,6 +47,7 @@
 mat-option div.option-character-container {
   display: flex;
   align-items: center;
+  line-height: 0;
 }
 
 mat-option span.char-space {

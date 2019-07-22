@@ -18,7 +18,11 @@
           </mat-list-item>
         </mat-nav-list>
         <div class="logo-container">
-          <!-- Image background -->
+          <picture>
+            <source type="image/webp" srcset="../assets/fg-notes-logo.png">
+            <source type="image/jpeg" srcset="../assets/fg-notes-logo.png">
+            <img src="../assets/fg-notes-logo.png" alt="FG-Notes Logo">
+          </picture>
         </div>
         <section class="footer">
           <div>
@@ -28,15 +32,15 @@
             </a>
           </div>
           <div class="contact">
-              <div>
-                  Created by David Martín
-                </div>
-              <a href="https://www.twitter.com/davidmrnr" target="_blank" mat-icon-button rel="noopener">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="mail:carlosdavidmartin@gmail.com" target="_blank" mat-icon-button rel="noopener">
-                <i class="far fa-envelope"></i>
-              </a>
+            <div>
+              Created by David Martín
+            </div>
+            <a href="https://www.twitter.com/davidmrnr" target="_blank" mat-icon-button rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mail:carlosdavidmartin@gmail.com" target="_blank" mat-icon-button rel="noopener">
+              <i class="far fa-envelope"></i>
+            </a>
           </div>
           <div class="version">Ver {{version}}</div>
         </section>
