@@ -35,7 +35,7 @@ export class OpponentsService {
     }
 
     getCharacters(): Observable<Character[]> {
-        return this.http.get('/assets/characters/data/characters.json').pipe(
+        return this.http.get('./assets/characters/data/characters.json').pipe(
             map((characters: Character[]) => characters)
         );
     }
