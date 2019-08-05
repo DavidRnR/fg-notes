@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1565017248176,
+  "timestamp": 1565019082452,
   "index": "https://davidrnr.github.io/fg-notes/index.html",
   "assetGroups": [
     {
@@ -11,7 +11,7 @@
         "https://davidrnr.github.io/fg-notes/favicon.ico",
         "https://davidrnr.github.io/fg-notes/index.html",
         "https://davidrnr.github.io/fg-notes/main-es2015.176aa0874242bb93f811.js",
-        "https://davidrnr.github.io/fg-notes/main-es5.f6482cc8f59b344f7259.js",
+        "https://davidrnr.github.io/fg-notes/main-es5.84b6b863998da33bea72.js",
         "https://davidrnr.github.io/fg-notes/polyfills-es2015.e4a1185e6871d06f842f.js",
         "https://davidrnr.github.io/fg-notes/polyfills-es5.da479429bfd39fbf99d9.js",
         "https://davidrnr.github.io/fg-notes/runtime-es2015.10a1f01eef199006286d.js",
@@ -246,9 +246,9 @@
     "https://davidrnr.github.io/fg-notes/fa-solid-900.a547e21eceadf53602ca.eot": "0851707b149ae37e9330a41901521da0124c950f",
     "https://davidrnr.github.io/fg-notes/fa-solid-900.fdc155d57b7351ef85b3.svg": "cde1b7601cadfacd4ffdb3ce6401140e52f04aac",
     "https://davidrnr.github.io/fg-notes/favicon.ico": "b6e4dc14453c47f8c099beddab7e7462610983f9",
-    "https://davidrnr.github.io/fg-notes/index.html": "b40001a7d4e37b625ee0ce6bc6181b24f663ef87",
+    "https://davidrnr.github.io/fg-notes/index.html": "e28314d89d7473fd83602fef8821a31f3c668808",
     "https://davidrnr.github.io/fg-notes/main-es2015.176aa0874242bb93f811.js": "9f7312315850c0b042e8fdcceb79fc5e734b8dff",
-    "https://davidrnr.github.io/fg-notes/main-es5.f6482cc8f59b344f7259.js": "4df1979a3e1844cb418b69ea0692c11f5ed96509",
+    "https://davidrnr.github.io/fg-notes/main-es5.84b6b863998da33bea72.js": "4df1979a3e1844cb418b69ea0692c11f5ed96509",
     "https://davidrnr.github.io/fg-notes/polyfills-es2015.e4a1185e6871d06f842f.js": "a514da8731833287c9583044e9d512d74c45312a",
     "https://davidrnr.github.io/fg-notes/polyfills-es5.da479429bfd39fbf99d9.js": "7e1b38fcb73a9607657630e25f278302170f96dc",
     "https://davidrnr.github.io/fg-notes/runtime-es2015.10a1f01eef199006286d.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
