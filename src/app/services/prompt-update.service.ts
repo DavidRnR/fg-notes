@@ -15,7 +15,7 @@ export class PromptUpdateService {
 
   checkNewVersionSW() {
     this.updates.available.subscribe(event => {
-      const message = `Version ${environment.version} ${this.translateService.instant('isAvailable')}`;
+      const message = `New Version ${this.translateService.instant('isAvailable')}`;
       const confirmSnackBar$: Subscription = this.openConfirmSnackBar(message, 'confirm', 'snackbar-main-confirm')
         .subscribe((confirm: boolean) => {
           if (confirm) {
