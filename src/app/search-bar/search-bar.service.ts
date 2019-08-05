@@ -12,7 +12,7 @@ export class SearchBarService {
 
   constructor() { }
 
-  public setSearchOption(options: any, fieldCompare: string) {
+  public setSearchOption(options: any) {
     this.searchOption = options;
     this.optionsSubject.next(this.searchOption);
     this.optionsSelectedSubject.next(this.searchOption);

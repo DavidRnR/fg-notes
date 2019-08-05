@@ -1,21 +1,33 @@
-import { Component } from '@angular/core';
-import { IndexedDBService } from './idb.service';
+import { Component, OnInit } from '@angular/core';
+import { IndexedDBService } from './services/idb.service';
 import { MatDialog } from '@angular/material';
 import { SettingsComponent } from './settings/settings.component';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from './../environments/environment';
+import { PromptUpdateService } from './services/prompt-update.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   dbLoaded = false;
-  constructor(private indexedDB: IndexedDBService, public dialog: MatDialog, private translateService: TranslateService) {
+  version = '';
+
+  constructor(private indexedDB: IndexedDBService, public dialog: MatDialog, 
+              private translateService: TranslateService, private promptUpdateService: PromptUpdateService) {
     this.indexedDB.initDB().subscribe( result => {
       this.dbLoaded = true;
     });
     this.initLang();
+    this.version = environment.version;
+  }
+
+  ngOnInit(): void {
+    // Check new Service Worker Version
+    this.promptUpdateService.checkNewVersionSW();
   }
 
   showSettings() {

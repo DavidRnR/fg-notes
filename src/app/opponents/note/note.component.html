@@ -7,7 +7,7 @@
 <form class="full-width" [formGroup]="noteForm" (ngSubmit)="onSubmit()">
 
   <mat-form-field class="full-width">
-    <textarea matInput placeholder="{{ 'note' | translate }}" rows="3" formControlName="note"></textarea>
+    <textarea matInput placeholder="{{ 'note' | translate }}" rows="3" formControlName="note" appAutofocus></textarea>
     <mat-error *ngIf="noteForm.get('note').getError('required')">{{ 'errorNote' | translate }}</mat-error>
     <mat-error *ngIf="noteForm.get('note').getError('maxlength')">{{ 'errorNoteChars' | translate }}</mat-error>
   </mat-form-field>

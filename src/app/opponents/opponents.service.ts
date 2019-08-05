@@ -1,4 +1,4 @@
-import { IndexedDBService } from './../idb.service';
+import { IndexedDBService } from '../services/idb.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -8,6 +8,7 @@ export interface Character {
     id: number;
     name: string;
     image: string;
+    imageWebp: string;
 }
 
 export interface Opponent {
@@ -34,7 +35,7 @@ export class OpponentsService {
     }
 
     getCharacters(): Observable<Character[]> {
-        return this.http.get('/assets/characters/data/characters.json').pipe(
+        return this.http.get('./assets/characters/data/characters.json').pipe(
             map((characters: Character[]) => characters)
         );
     }

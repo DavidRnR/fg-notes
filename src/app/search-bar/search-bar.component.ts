@@ -26,6 +26,11 @@ export class SearchBarComponent implements OnInit {
 
     this.searchBarService.connect().subscribe((result: any) => {
       this.dataValues = result;
+      if (this.dataValues.length === 0) {
+        this.myControl.disable();
+      } else {
+        this.myControl.enable();
+      }
     });
 
     this.searchBarService.getResetControl().subscribe((clean) => {

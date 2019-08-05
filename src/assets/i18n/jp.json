@@ -22,5 +22,9 @@
     "restoreAppQuestion": "アプリを復元してよろしいですか？ すべてのデータが削除されます",
     "deleteOpponentQuestion": "消去してもよろしいですか",
     "deleteNoteQuestion": "このメモを削除してもよろしいですか？",
-    "somethingWentWrong": "おっとっと！ 問題が発生しました..."
+    "somethingWentWrong": "おっとっと！ 問題が発生しました...",
+    "maxNotes": "最大 ノートは15です",
+    "clickHereTo": "ここをクリックして",
+    "addAnOpponent": "相手を追加する",
+    "isAvailable": "利用可能です"
 }

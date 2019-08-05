@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SnackbarService } from '../snackbar/snackbar-message.component';
 import { Observable, Subscription } from 'rxjs';
-import { IndexedDBService } from '../idb.service';
+import { IndexedDBService } from '../services/idb.service';
 import { TranslateService } from '@ngx-translate/core';
 import { FormControl } from '@angular/forms';
 
@@ -53,9 +53,5 @@ export class SettingsComponent {
   private openConfirmSnackBar(message, type, className): Observable<boolean> {
     this.snackbarService.status.next({ message: message, type: type, class: className });
     return this.snackbarService.onConfirmSnackbar();
-  }
-
-  private openSnackBar(message, type) {
-    this.snackbarService.status.next({ message: message, type: type, class: `snackbar-main-${type}`, duration: 4000 });
   }
 }

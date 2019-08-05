@@ -18,27 +18,31 @@
           </mat-list-item>
         </mat-nav-list>
         <div class="logo-container">
-          <!-- Image background -->
+          <picture>
+            <source type="image/webp" srcset="./assets/fg-notes-logo.webp">
+            <source type="image/png" srcset="./assets/fg-notes-logo.png">
+            <img src="./assets/fg-notes-logo.png" alt="FG-Notes Logo">
+          </picture>
         </div>
         <section class="footer">
-          <div>
+          <div class="donate">
             Donate
             <a href="https://www.paypal.me/davidrnr" target="_blank" mat-icon-button rel="noopener">
               <i class="fab fa-paypal" role="button"></i>
             </a>
           </div>
           <div class="contact">
-              <div>
-                  Created by David Martín
-                </div>
-              <a href="https://www.twitter.com/davidmrnr" target="_blank" mat-icon-button rel="noopener">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="mail:carlosdavidmartin@gmail.com" target="_blank" mat-icon-button rel="noopener">
-                <i class="far fa-envelope"></i>
-              </a>
+            <div>
+              Created by David Martín
+            </div>
+            <a href="https://www.twitter.com/davidmrnr" target="_blank" mat-icon-button rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mail:carlosdavidmartin@gmail.com" target="_blank" mat-icon-button rel="noopener">
+              <i class="far fa-envelope"></i>
+            </a>
           </div>
-          <div class="version">Ver 0.3</div>
+          <div class="version">Ver {{version}}</div>
         </section>
       </div>
     </mat-sidenav>

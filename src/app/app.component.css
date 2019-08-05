@@ -19,7 +19,7 @@ mat-toolbar button {
 
 .sidenav {
   width: 30vw;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5942752100840336) 0%, rgba(255, 151, 0, 1) 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0) 0%, rgba(255, 151, 0, 1) 100%);
   border: 1px solid black;
 }
 
@@ -36,16 +36,22 @@ mat-toolbar button {
   box-sizing: border-box;
 }
 
-.logo-container {
-  background-image: url("../assets/fg-notes-logo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 50%;
-  height: 50%;
+.logo-container img {
+  width: 80%;
 }
 
 .footer {
   font-size: 1.2rem;
+}
+
+.footer i {
+  font-size: 1.2rem;
+}
+
+.footer .donate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer .version {
@@ -65,7 +71,7 @@ mat-toolbar button {
   align-self: flex-end;
 }
 
-.sidenav-content-container mat-nav-list, 
+.sidenav-content-container mat-nav-list,
 .sidenav-content-container mat-nav-list mat-list-item button {
   width: 100%;
 }
@@ -97,6 +103,10 @@ mat-toolbar button {
 }
 
 @media (max-width: 768px) {
+  mat-toolbar {
+    background: black;
+  }
+
   .sidenav-content-container mat-nav-list {
     align-self: center;
   }
