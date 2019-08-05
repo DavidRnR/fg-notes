@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1565020073744,
+  "timestamp": 1565020449157,
   "index": "https://davidrnr.github.io/fg-notes/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://davidrnr.github.io/fg-notes/favicon.ico",
         "https://davidrnr.github.io/fg-notes/index.html",
-        "https://davidrnr.github.io/fg-notes/main-es2015.7a0c8126fe383a799fe0.js",
-        "https://davidrnr.github.io/fg-notes/main-es5.aa2a50f7d3ca657fafeb.js",
+        "https://davidrnr.github.io/fg-notes/main-es2015.b73a466634d637f14377.js",
+        "https://davidrnr.github.io/fg-notes/main-es5.4f8e21ee63ed4ad31f78.js",
         "https://davidrnr.github.io/fg-notes/polyfills-es2015.e4a1185e6871d06f842f.js",
         "https://davidrnr.github.io/fg-notes/polyfills-es5.da479429bfd39fbf99d9.js",
         "https://davidrnr.github.io/fg-notes/runtime-es2015.10a1f01eef199006286d.js",
@@ -246,9 +246,9 @@
     "https://davidrnr.github.io/fg-notes/fa-solid-900.a547e21eceadf53602ca.eot": "0851707b149ae37e9330a41901521da0124c950f",
     "https://davidrnr.github.io/fg-notes/fa-solid-900.fdc155d57b7351ef85b3.svg": "cde1b7601cadfacd4ffdb3ce6401140e52f04aac",
     "https://davidrnr.github.io/fg-notes/favicon.ico": "b6e4dc14453c47f8c099beddab7e7462610983f9",
-    "https://davidrnr.github.io/fg-notes/index.html": "852ca671db69796bef2b7c8185488bbb90e77cad",
-    "https://davidrnr.github.io/fg-notes/main-es2015.7a0c8126fe383a799fe0.js": "9f0fd8831455da60cc8f4e9ea9f46f06822d694a",
-    "https://davidrnr.github.io/fg-notes/main-es5.aa2a50f7d3ca657fafeb.js": "f581295db40bc96e6248d063145a06ae93aac9d3",
+    "https://davidrnr.github.io/fg-notes/index.html": "86f350d21073ddaaf6291a7089815e02126f306a",
+    "https://davidrnr.github.io/fg-notes/main-es2015.b73a466634d637f14377.js": "c10b3b9d6815e6224791abf8242ebf25b13b9320",
+    "https://davidrnr.github.io/fg-notes/main-es5.4f8e21ee63ed4ad31f78.js": "7a83318c0e63f94b0f7c96a833887fec3a6f69aa",
     "https://davidrnr.github.io/fg-notes/polyfills-es2015.e4a1185e6871d06f842f.js": "a514da8731833287c9583044e9d512d74c45312a",
     "https://davidrnr.github.io/fg-notes/polyfills-es5.da479429bfd39fbf99d9.js": "7e1b38fcb73a9607657630e25f278302170f96dc",
     "https://davidrnr.github.io/fg-notes/runtime-es2015.10a1f01eef199006286d.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
