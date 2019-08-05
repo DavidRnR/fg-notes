@@ -44,6 +44,16 @@ mat-toolbar button {
   font-size: 1.2rem;
 }
 
+.footer i {
+  font-size: 1.2rem;
+}
+
+.footer .donate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .footer .version {
   font-size: 0.6rem;
 }
@@ -61,7 +71,7 @@ mat-toolbar button {
   align-self: flex-end;
 }
 
-.sidenav-content-container mat-nav-list, 
+.sidenav-content-container mat-nav-list,
 .sidenav-content-container mat-nav-list mat-list-item button {
   width: 100%;
 }

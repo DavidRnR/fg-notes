@@ -208,5 +208,23 @@
         "name": "Kage",
         "image": "assets/characters/kage.jpg",
         "imageWebp": "assets/characters/kage.webp"
+    },
+    {
+        "id": 36,
+        "name": "E.Honda",
+        "image": "assets/characters/ehonda.jpg",
+        "imageWebp": "assets/characters/ehonda.webp"
+    },
+    {
+        "id": 37,
+        "name": "Lucia",
+        "image": "assets/characters/lucia.jpg",
+        "imageWebp": "assets/characters/lucia.webp"
+    },
+    {
+        "id": 38,
+        "name": "Poison",
+        "image": "assets/characters/poison.jpg",
+        "imageWebp": "assets/characters/poison.webp"
     }
 ]
