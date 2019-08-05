@@ -24,5 +24,7 @@
     "deleteNoteQuestion": "Are you sure you want to delete this note?",
     "somethingWentWrong": "Oops! Something went wrong...",
     "maxNotes": "Max. Notes is 15",
-    "updateApp": "Do you want to update?"
+    "clickHereTo": "Click here to",
+    "addAnOpponent": "Add an Opponent",
+    "isAvailable": "is available"
 }

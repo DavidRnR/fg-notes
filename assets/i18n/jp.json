@@ -24,5 +24,7 @@
     "deleteNoteQuestion": "このメモを削除してもよろしいですか？",
     "somethingWentWrong": "おっとっと！ 問題が発生しました...",
     "maxNotes": "最大 ノートは15です",
-    "updateApp": "更新しますか？"
+    "clickHereTo": "ここをクリックして",
+    "addAnOpponent": "相手を追加する",
+    "isAvailable": "利用可能です"
 }

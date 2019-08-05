@@ -24,5 +24,7 @@
     "deleteNoteQuestion": "이 메모를 삭제 하시겠습니까?",
     "somethingWentWrong": "죄송합니다. 문제가 발생했습니다 ...",
     "maxNotes": "맥스. 노트는 15입니다.",
-    "updateApp": "업데이트 하시겠습니까?"
+    "clickHereTo": "여기를 클릭하십시오.",
+    "addAnOpponent": "상대방 추가",
+    "isAvailable": "사용할 수 있습니다"
 }

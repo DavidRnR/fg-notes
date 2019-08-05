@@ -24,5 +24,7 @@
     "deleteNoteQuestion": "Está seguro que desea borrar esta nota?",
     "somethingWentWrong": "Oops! Algo salió mal...",
     "maxNotes": "Max. Notas es 15",
-    "updateApp": "Quieres actualizar?"
+    "clickHereTo": "Click aquí para",
+    "addAnOpponent": "Agregar un Oponente",
+    "isAvailable": "está disponible"
 }
