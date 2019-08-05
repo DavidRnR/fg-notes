@@ -54,8 +54,4 @@ export class SettingsComponent {
     this.snackbarService.status.next({ message: message, type: type, class: className });
     return this.snackbarService.onConfirmSnackbar();
   }
-
-  private openSnackBar(message, type) {
-    this.snackbarService.status.next({ message: message, type: type, class: `snackbar-main-${type}`, duration: 4000 });
-  }
 }

@@ -3,7 +3,6 @@ import { SwUpdate } from '@angular/service-worker';
 import { SnackbarService } from '../snackbar/snackbar-message.component';
 import { Observable, Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
