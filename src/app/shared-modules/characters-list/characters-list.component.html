@@ -1,0 +1,24 @@
+<section class="full-width select-character-container">
+  <mat-form-field>
+    <mat-select placeholder="{{ 'character' | translate }}" [formControl]="characterControl">
+      <mat-option *ngFor="let character of characters | orderAz" [value]="character.id">
+        <div class="character-option">
+          <picture>
+            <source type="image/webp" srcset="{{character.imageWebp}}">
+            <source type="image/jpeg" srcset="{{character.image}}">
+            <img src="{{character.image}}" alt="Character {{character.name}}">
+          </picture>
+          <span>{{character.name}}</span>
+        </div>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div *ngIf="characterSelected" class="character-option">
+    <picture>
+      <source type="image/webp" srcset="{{characterSelected.imageWebp}}">
+      <source type="image/jpeg" srcset="{{characterSelected.image}}">
+      <img src="{{characterSelected.image}}" alt="Character {{characterSelected.name}}">
+    </picture>
+  </div>
+</section>

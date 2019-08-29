@@ -10,13 +10,19 @@
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav">
       <div class="sidenav-content-container">
-        <mat-nav-list>
-          <mat-list-item>
-            <button mat-icon-button color="primary" (click)="showSettings()">
-              {{ 'settings' | translate }} <mat-icon>settings</mat-icon>
-            </button>
-          </mat-list-item>
-        </mat-nav-list>
+        <section class="sidenav-list">
+          <a routerLink="/notes" routerLinkActive="active">
+            <mat-icon>notes</mat-icon> Notes
+          </a>
+
+          <a routerLink="/frame-data" routerLinkActive="active">
+            <mat-icon>bar_chart</mat-icon> Frame Data
+          </a>
+
+          <a (click)="showSettings()">
+            <mat-icon>settings</mat-icon> {{ 'settings' | translate }}
+          </a>
+        </section>
         <div class="logo-container">
           <picture>
             <source type="image/webp" srcset="./assets/fg-notes-logo.webp">
@@ -47,7 +53,7 @@
       </div>
     </mat-sidenav>
     <mat-sidenav-content>
-      <app-opponents></app-opponents>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </main>

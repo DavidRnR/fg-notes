@@ -16,7 +16,12 @@ import {
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { AppRoutingModule } from './app.routing';
 import { SnackBarMessageModule } from './snackbar/snackbar-message.module';
+
+// Modules
+import { CharactersListModule } from './shared-modules/characters-list/characters-list.module';
+import { SharedPipesModule } from './shared-modules/shared-pipes/shared-pipes.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -25,10 +30,7 @@ import { OpponentsComponent } from './opponents/opponents.component';
 import { OpponentComponent } from './opponents/opponent/opponent.component';
 import { NoteComponent } from './opponents/note/note.component';
 import { SettingsComponent } from './settings/settings.component';
-
-// Pipes
-import { OrderAzPipe } from './pipes/order-az.pipe';
-import { TruncatePipe } from './pipes/truncate.pipe';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 //Translation
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -45,12 +47,12 @@ import { AutofocusDirective } from './directives/autofocus.directive';
     NoteComponent,
     SearchBarComponent,
     SettingsComponent,
-    OrderAzPipe,
-    TruncatePipe,
-    AutofocusDirective
+    PageNotFoundComponent,
+    AutofocusDirective,
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     HttpClientModule,
@@ -76,7 +78,9 @@ import { AutofocusDirective } from './directives/autofocus.directive';
     MatSelectModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    SnackBarMessageModule
+    SnackBarMessageModule,
+    CharactersListModule,
+    SharedPipesModule
   ],
   entryComponents: [OpponentComponent, NoteComponent, SettingsComponent],
   providers: [],

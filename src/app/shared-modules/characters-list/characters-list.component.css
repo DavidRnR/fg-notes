@@ -1,0 +1,29 @@
+.select-character-container {
+  display: flex;
+  align-items: center;
+}
+
+.select-character-container mat-form-field {
+  flex: 1;
+  margin-right: 0.3em;
+}
+
+.character-option {
+  display: flex;
+}
+
+.character-option {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.character-option img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.character-option span {
+  margin-left: 1em;
+}

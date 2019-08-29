@@ -1,0 +1,95 @@
+<app-characters-list [defaultCharacter]="characterSelected" (selectCharacter)="onSelectCharacter($event)">
+</app-characters-list>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Column -->
+  <ng-container matColumnDef="move">
+    <th mat-header-cell *matHeaderCellDef [ngStyle]="{'display': 'none'}"> Move </th>
+    <td mat-cell *matCellDef="let element"> {{element.move}} </td>
+  </ng-container>
+  <ng-container matColumnDef="moveCol">
+    <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Move </th>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="header-row-frames">
+    <th mat-header-cell *matHeaderCellDef [attr.colspan]="3"> Frames </th>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="startup">
+    <th mat-header-cell *matHeaderCellDef> Startup </th>
+    <td mat-cell *matCellDef="let element"> {{element.startup}} </td>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="active">
+    <th mat-header-cell *matHeaderCellDef> Active </th>
+    <td mat-cell *matCellDef="let element"> {{element.active}} </td>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="recovery">
+    <th mat-header-cell *matHeaderCellDef> Recovery </th>
+    <td mat-cell *matCellDef="let element"> {{element.recovery}} </td>
+  </ng-container>
+
+
+  <!-- Column -->
+  <ng-container matColumnDef="header-row-recovery">
+    <th mat-header-cell *matHeaderCellDef [attr.colspan]="2"> Recovery </th>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="onhit">
+    <th mat-header-cell *matHeaderCellDef> OnHit </th>
+    <td mat-cell *matCellDef="let element"> {{element.onhit}} </td>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="onblock">
+    <th mat-header-cell *matHeaderCellDef> OnBlock </th>
+    <td mat-cell *matCellDef="let element"> {{element.onblock}} </td>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="header-row-vti">
+    <th mat-header-cell *matHeaderCellDef [attr.colspan]="2"> VT1 </th>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="vtioh">
+    <th mat-header-cell *matHeaderCellDef> OnHit </th>
+    <td mat-cell *matCellDef="let element"> {{element.vtioh}} </td>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="vtiob">
+    <th mat-header-cell *matHeaderCellDef> OnBlock </th>
+    <td mat-cell *matCellDef="let element"> {{element.vtiob}} </td>
+  </ng-container>
+
+
+  <!-- Column -->
+  <ng-container matColumnDef="header-row-vtii">
+    <th mat-header-cell *matHeaderCellDef [attr.colspan]="2"> VT2 </th>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="vtiioh">
+    <th mat-header-cell *matHeaderCellDef> OnHit </th>
+    <td mat-cell *matCellDef="let element"> {{element.vtiioh}} </td>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="vtiiob">
+    <th mat-header-cell *matHeaderCellDef> OnBlock </th>
+    <td mat-cell *matCellDef="let element"> {{element.vtiiob}} </td>
+  </ng-container>
+  <tr mat-header-row
+    *matHeaderRowDef="['moveCol', 'header-row-frames', 'header-row-recovery', 'header-row-vti', 'header-row-vtii']">
+  </tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

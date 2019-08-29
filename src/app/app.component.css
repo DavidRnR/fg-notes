@@ -66,18 +66,33 @@ mat-toolbar button {
   padding: 0.5em;
 }
 
-.sidenav-content-container mat-nav-list {
-  max-width: 10rem;
-  align-self: flex-end;
-}
-
-.sidenav-content-container mat-nav-list,
-.sidenav-content-container mat-nav-list mat-list-item button {
+.sidenav-content-container section.sidenav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  padding: 1em;
 }
 
-.sidenav-content-container mat-nav-list mat-list-item button {
-  background-color: white;
+.sidenav-content-container section.sidenav-list a {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.3em;
+  place-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1em;
+}
+
+.sidenav-content-container section.sidenav-list a.active,
+.sidenav-content-container section.sidenav-list a:active {
+  font-size: 2rem;
+}
+
+.sidenav-content-container section.sidenav-list a:hover {
+  transform: scale(1.1);
 }
 
 
@@ -107,8 +122,9 @@ mat-toolbar button {
     background: black;
   }
 
-  .sidenav-content-container mat-nav-list {
-    align-self: center;
+  .sidenav-content-container section.sidenav-list a.active,
+  .sidenav-content-container section.sidenav-list a:active {
+    font-size: 1.3rem;
   }
 
   .search-bar-container {

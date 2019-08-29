@@ -2,7 +2,8 @@ import { Character } from '../opponents.service';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { OpponentsService, Opponent } from '../opponents.service';
+import { Opponent } from '../opponents.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-opponent',
@@ -12,16 +13,14 @@ import { OpponentsService, Opponent } from '../opponents.service';
 export class OpponentComponent implements OnInit {
 
   opponentForm: FormGroup;
-  submitted = false;
   spinner = false;
 
-  characters: Character[] = [];
   characterSelected: Character;
   opponent: Opponent;
   opponentId: number;
 
   constructor(public dialogRef: MatDialogRef<OpponentComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-    private formBuilder: FormBuilder, public opponentsService: OpponentsService) {
+    private formBuilder: FormBuilder) {
     // Get id when create a new Opponent
     if (data.opponentId !== undefined) { // Compare against undefined because opponentId could be 0 or 1
       this.opponentId = data.opponentId;
@@ -34,15 +33,9 @@ export class OpponentComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-
-    this.opponentsService.getCharacters().subscribe((characters: Character[]) => {
-      this.characters = characters;
-    });
   }
 
   onSubmit() {
-
-    this.submitted = true;
 
     if (this.opponentForm.valid) {
       // Show Loading
@@ -60,13 +53,13 @@ export class OpponentComponent implements OnInit {
     }
   }
 
-  onSelectCharacter($event) {
-    this.characterSelected = this.characters.find((char: Character) => {
-      return char.id === $event.value;
-    });
+  onSelectCharacter(character : Character) {
+    this.characterSelected = character;
+    this.opponentForm.get('character').setValue(character);
   }
 
   private createForm() {
+
     this.characterSelected = (this.opponent && this.opponent.character.id) ? this.opponent.character : null;
 
     this.opponentForm = this.formBuilder.group({
