@@ -51,7 +51,7 @@ export class OpponentComponent implements OnInit {
       const opponent: Opponent = {
         id: (this.opponent) ? this.opponent.id : this.opponentId,
         cfn: this.opponentForm.get('cfn').value,
-        name: this.opponentForm.get('name').value,
+        // name: this.opponentForm.get('name').value,
         character: this.characterSelected,
         notes: (this.opponent) ? this.opponent.notes : this.getNoteValue(this.opponentForm.get('note').value)
       };
@@ -71,7 +71,7 @@ export class OpponentComponent implements OnInit {
 
     this.opponentForm = this.formBuilder.group({
       cfn: [(this.opponent && this.opponent.cfn) ? this.opponent.cfn : null, [Validators.required, Validators.maxLength(25)]],
-      name: [(this.opponent && this.opponent.name) ? this.opponent.name : null, [Validators.required, Validators.maxLength(30)]],
+      // name: [(this.opponent && this.opponent.name) ? this.opponent.name : null, [Validators.required, Validators.maxLength(30)]],
       character: [(this.characterSelected) ? this.characterSelected.id : null, [Validators.required]],
       note: [null, [Validators.maxLength(80)]],
     });

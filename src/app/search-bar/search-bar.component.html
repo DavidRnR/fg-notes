@@ -11,7 +11,7 @@
   <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onSelectOption($event)">
     <mat-option *ngFor="let option of filteredValues | async" [value]="option.cfn">
       <div *ngIf="auto.isOpen" class="option-character-container">
-        <span>{{ option.name | truncate: 12 }}</span>
+        <span>{{ option.cfn | truncate: 12 }}</span>
         <span class="char-space">-</span>
         <span class="cfn">{{ option.cfn | truncate: 12 }}</span>
         <div class="character-option">
@@ -24,4 +24,5 @@
       </div>
     </mat-option>
   </mat-autocomplete>
+
 </form>

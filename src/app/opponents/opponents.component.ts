@@ -80,7 +80,7 @@ export class OpponentsComponent implements OnInit {
   }
 
   onDeleteOpponent(opponent: Opponent) {
-    const confirmSnackBar$: Subscription = this.openConfirmSnackBar(`${this.translateService.instant('deleteOpponentQuestion')} ${opponent.name}?`, 'confirm', 'snackbar-main-confirm')
+    const confirmSnackBar$: Subscription = this.openConfirmSnackBar(`${this.translateService.instant('deleteOpponentQuestion')} ${opponent.cfn}?`, 'confirm', 'snackbar-main-confirm')
       .subscribe((confirm: boolean) => {
         if (confirm) {
           this.opponentsService.deleteOpponent(opponent).subscribe(opponent => {
