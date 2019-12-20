@@ -226,5 +226,11 @@
         "name": "Poison",
         "image": "assets/characters/poison.jpg",
         "imageWebp": "assets/characters/poison.webp"
+    },
+    {
+        "id": 39,
+        "name": "Gill",
+        "image": "assets/characters/gill.jpg",
+        "imageWebp": "assets/characters/gill.webp"
     }
 ]
