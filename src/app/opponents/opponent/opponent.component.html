@@ -13,17 +13,11 @@
     <mat-error *ngIf="opponentForm.get('cfn').getError('maxlength')">{{ 'cfnErrorChars' | translate }}</mat-error>
   </mat-form-field>
 
-  <mat-form-field class="full-width">
-    <input matInput placeholder="{{ 'name' | translate }}" formControlName="name">
-    <mat-error *ngIf="opponentForm.get('name').getError('required')">{{ 'nameError' | translate }}</mat-error>
-    <mat-error *ngIf="opponentForm.get('name').getError('maxlength')">{{ 'nameErrorChars' | translate }}</mat-error>
-  </mat-form-field>
-
   <section class="full-width select-character-container">
     <mat-form-field>
       <mat-select placeholder="{{ 'character' | translate }}" formControlName="character"
         (selectionChange)="onSelectCharacter($event)">
-        <mat-option *ngFor="let character of characters | orderAz" [value]="character.id">
+        <mat-option *ngFor="let character of characters | orderAz: 'name'" [value]="character.id">
           <div class="character-option">
             <picture>
               <source type="image/webp" srcset="{{character.imageWebp}}">

@@ -14,7 +14,6 @@ export interface Character {
 export interface Opponent {
     id?: number;
     cfn: string;
-    name: string;
     character: Character;
     notes: string[]
 }

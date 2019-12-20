@@ -1,5 +1,5 @@
 <main *ngIf="dbLoaded">
-  <mat-toolbar>
+  <mat-toolbar class="mat-elevation-z3">
     <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
@@ -25,16 +25,13 @@
           </picture>
         </div>
         <section class="footer">
-          <div class="donate">
-            Donate
+          <mat-card class="donate">
             <a href="https://www.paypal.me/davidrnr" target="_blank" mat-icon-button rel="noopener">
+              <span>DONATE</span>
               <i class="fab fa-paypal" role="button"></i>
             </a>
-          </div>
+          </mat-card>
           <div class="contact">
-            <div>
-              Created by David Martín
-            </div>
             <a href="https://www.twitter.com/davidmrnr" target="_blank" mat-icon-button rel="noopener">
               <i class="fab fa-twitter"></i>
             </a>
@@ -42,7 +39,7 @@
               <i class="far fa-envelope"></i>
             </a>
           </div>
-          <div class="version">Ver {{version}}</div>
+          <div class="version">Created by David Martín - Ver {{version}}</div>
         </section>
       </div>
     </mat-sidenav>
