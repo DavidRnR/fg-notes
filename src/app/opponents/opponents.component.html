@@ -1,5 +1,6 @@
 <div class="cards-container">
   <mat-card *ngFor="let opponent of opponentsFiltered | async | orderAz: 'cfn'">
+
     <mat-card-header>
       <div mat-card-avatar class="header-image">
         <picture>
@@ -26,6 +27,7 @@
         </button>
       </mat-menu>
     </mat-card-header>
+
     <mat-card-content>
       <mat-list>
         <mat-list-item *ngFor="let note of opponent.notes; index as i">
@@ -39,11 +41,13 @@
         </mat-list-item>
       </mat-list>
     </mat-card-content>
+
     <mat-card-actions>
       <button mat-stroked-button (click)="onAddNote(opponent)">
         {{ 'addNote' | translate }}
       </button>
     </mat-card-actions>
+
   </mat-card>
 </div>
 
@@ -65,7 +69,7 @@
 <section class="add-opponent-container">
   <div class="relative-container">
     <div class="helper circleIn" *ngIf="(opponentsFiltered | async)?.length === 0">
-      <mat-icon color="accent">help_outline</mat-icon>
+      <mat-icon class="help-icon">help_outline</mat-icon>
       <span>{{ 'clickHereTo' | translate }} <strong>{{ 'addAnOpponent' | translate }}!</strong></span>
     </div>
     <button [class.zoomInOut]="(opponentsFiltered | async)?.length === 0" mat-fab color="primary"

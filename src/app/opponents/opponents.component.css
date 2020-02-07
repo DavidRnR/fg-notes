@@ -97,6 +97,10 @@ mat-card-actions button {
   height: 200px;
 }
 
+.help-icon {
+  color: var(--help-color);
+}
+
 @media (max-width: 1279px) {
   .cards-container {
     grid-template-columns: 49% 49%;

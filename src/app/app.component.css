@@ -60,6 +60,10 @@ mat-toolbar {
   font-size: 1.5rem;
 }
 
+.footer a:hover {
+  transform: scale(1.1);
+}
+
 .footer .donate a {
   width: 100%;
   display: flex;
