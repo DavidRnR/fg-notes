@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1576875282450,
+  "timestamp": 1581084304926,
   "index": "https://davidrnr.github.io/fg-notes/index.html",
   "assetGroups": [
     {
@@ -10,13 +10,14 @@
       "urls": [
         "https://davidrnr.github.io/fg-notes/favicon.ico",
         "https://davidrnr.github.io/fg-notes/index.html",
-        "https://davidrnr.github.io/fg-notes/main-es2015.cc9be5a36cffc15c162f.js",
-        "https://davidrnr.github.io/fg-notes/main-es5.cc9be5a36cffc15c162f.js",
-        "https://davidrnr.github.io/fg-notes/polyfills-es2015.25ff13674b3056b14f77.js",
-        "https://davidrnr.github.io/fg-notes/polyfills-es5.ab8c3fd91abe92321ffb.js",
-        "https://davidrnr.github.io/fg-notes/runtime-es2015.edb2fcf2778e7bf1d426.js",
-        "https://davidrnr.github.io/fg-notes/runtime-es5.edb2fcf2778e7bf1d426.js",
-        "https://davidrnr.github.io/fg-notes/styles.ce5a0a02f0bffe473fc6.css"
+        "https://davidrnr.github.io/fg-notes/main-es2015.054bb0fc21668647d6d5.js",
+        "https://davidrnr.github.io/fg-notes/main-es5.054bb0fc21668647d6d5.js",
+        "https://davidrnr.github.io/fg-notes/manifest.webmanifest",
+        "https://davidrnr.github.io/fg-notes/polyfills-es2015.ca64e4516afbb1b890d5.js",
+        "https://davidrnr.github.io/fg-notes/polyfills-es5.277e2e1d6fb2daf91a5c.js",
+        "https://davidrnr.github.io/fg-notes/runtime-es2015.0811dcefd377500b5b1a.js",
+        "https://davidrnr.github.io/fg-notes/runtime-es5.0811dcefd377500b5b1a.js",
+        "https://davidrnr.github.io/fg-notes/styles.1e4ea7c634e44e365d6a.css"
       ],
       "patterns": []
     },
@@ -96,6 +97,8 @@
         "https://davidrnr.github.io/fg-notes/assets/characters/sagat.webp",
         "https://davidrnr.github.io/fg-notes/assets/characters/sakura.jpg",
         "https://davidrnr.github.io/fg-notes/assets/characters/sakura.webp",
+        "https://davidrnr.github.io/fg-notes/assets/characters/seth.jpg",
+        "https://davidrnr.github.io/fg-notes/assets/characters/seth.webp",
         "https://davidrnr.github.io/fg-notes/assets/characters/urien.jpg",
         "https://davidrnr.github.io/fg-notes/assets/characters/urien.webp",
         "https://davidrnr.github.io/fg-notes/assets/characters/vega.jpg",
@@ -158,7 +161,7 @@
     "https://davidrnr.github.io/fg-notes/assets/characters/chunli.webp": "c8c2f538b48b08222b370a3bc150377a372f01f7",
     "https://davidrnr.github.io/fg-notes/assets/characters/cody.jpg": "45225051e0ee2511ce3670697d1668566e920274",
     "https://davidrnr.github.io/fg-notes/assets/characters/cody.webp": "4c98586b595df95acad860188b97b80fc8bbd3b3",
-    "https://davidrnr.github.io/fg-notes/assets/characters/data/characters.json": "1bccc79f830816cf448b30706249a340a0e0ac0b",
+    "https://davidrnr.github.io/fg-notes/assets/characters/data/characters.json": "a529b488409b144087e40996d8c53b28fc37b2fe",
     "https://davidrnr.github.io/fg-notes/assets/characters/dhalsim.jpg": "1735335c79c5d54e6cc5925182344ab9ca6e9d19",
     "https://davidrnr.github.io/fg-notes/assets/characters/dhalsim.webp": "1b2b7270d8e7c2c2cbcd286a1aa9405b7b02dc40",
     "https://davidrnr.github.io/fg-notes/assets/characters/ed.jpg": "ae696aa4c8cfc543d90b37f16b1e02b9db8409c9",
@@ -211,6 +214,8 @@
     "https://davidrnr.github.io/fg-notes/assets/characters/sagat.webp": "337feda93af0ed047f80e4d0f8e84ca67a56d7bd",
     "https://davidrnr.github.io/fg-notes/assets/characters/sakura.jpg": "394f1ac48fddffc7d01259877fbca0f114408459",
     "https://davidrnr.github.io/fg-notes/assets/characters/sakura.webp": "0df84f7431dbf143391620cb23e1fa1f5ad3a2f1",
+    "https://davidrnr.github.io/fg-notes/assets/characters/seth.jpg": "b84bf37aa0156eb64052ff809ee311400882aa97",
+    "https://davidrnr.github.io/fg-notes/assets/characters/seth.webp": "de0250604c9b6b198705d899db9592e5ecbd43b2",
     "https://davidrnr.github.io/fg-notes/assets/characters/urien.jpg": "c9e0263998e5dcabc430664b60cd39f59c7712a0",
     "https://davidrnr.github.io/fg-notes/assets/characters/urien.webp": "591ea6b0d7ee16e5723be953436a0c37be1cbf55",
     "https://davidrnr.github.io/fg-notes/assets/characters/vega.jpg": "559db1d423f41b5ba6129c3bd99fdced3b7cb807",
@@ -250,14 +255,15 @@
     "https://davidrnr.github.io/fg-notes/fa-solid-900.93f284548b42ab76fe3f.woff": "61f40daca6978e6e7ab761e748c2dd9d236c7586",
     "https://davidrnr.github.io/fg-notes/fa-solid-900.f6121be597a72928f54e.woff2": "b2c74520c3f506efbfefca867918e5ae28bd5222",
     "https://davidrnr.github.io/fg-notes/favicon.ico": "b6e4dc14453c47f8c099beddab7e7462610983f9",
-    "https://davidrnr.github.io/fg-notes/index.html": "f627d0322ca8f72756dfaa90438fdd4cefcfa018",
-    "https://davidrnr.github.io/fg-notes/main-es2015.cc9be5a36cffc15c162f.js": "b7814fe7a15defdb6a35b7869a2ebad1214cb77f",
-    "https://davidrnr.github.io/fg-notes/main-es5.cc9be5a36cffc15c162f.js": "59c20690ed46512bb28e9dabfb3f4801315775af",
-    "https://davidrnr.github.io/fg-notes/polyfills-es2015.25ff13674b3056b14f77.js": "8d657a1a62b4a0583fdebe73e9b4203b5d20657e",
-    "https://davidrnr.github.io/fg-notes/polyfills-es5.ab8c3fd91abe92321ffb.js": "8e5828b271cbe05f6cc0b94ae69e12a41f4f1281",
-    "https://davidrnr.github.io/fg-notes/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "https://davidrnr.github.io/fg-notes/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "https://davidrnr.github.io/fg-notes/styles.ce5a0a02f0bffe473fc6.css": "27d4362896d07449ef8126cdb142384b3335c89b"
+    "https://davidrnr.github.io/fg-notes/index.html": "61d8f1c9ced570617f35f453fead230b2be803bb",
+    "https://davidrnr.github.io/fg-notes/main-es2015.054bb0fc21668647d6d5.js": "3395a8591a4b588dce84433f31843a8475f5c556",
+    "https://davidrnr.github.io/fg-notes/main-es5.054bb0fc21668647d6d5.js": "a4764ce3f4e8cc65107e08eccbdd3494b05f1c02",
+    "https://davidrnr.github.io/fg-notes/manifest.webmanifest": "0fae186b4c487fad0ebc7b7177073542b7b3cc03",
+    "https://davidrnr.github.io/fg-notes/polyfills-es2015.ca64e4516afbb1b890d5.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
+    "https://davidrnr.github.io/fg-notes/polyfills-es5.277e2e1d6fb2daf91a5c.js": "8d03638471d7374e81cf33adfdea439f84ac3873",
+    "https://davidrnr.github.io/fg-notes/runtime-es2015.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://davidrnr.github.io/fg-notes/runtime-es5.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://davidrnr.github.io/fg-notes/styles.1e4ea7c634e44e365d6a.css": "d35efbafc64fc9b0fb9e62588a422d9e5b5baedb"
   },
   "navigationUrls": [
     {
