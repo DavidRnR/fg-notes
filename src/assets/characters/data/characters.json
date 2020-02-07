@@ -232,5 +232,11 @@
         "name": "Gill",
         "image": "assets/characters/gill.jpg",
         "imageWebp": "assets/characters/gill.webp"
+    },
+    {
+        "id": 40,
+        "name": "Seth",
+        "image": "assets/characters/seth.jpg",
+        "imageWebp": "assets/characters/seth.webp"
     }
 ]
